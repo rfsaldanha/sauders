@@ -42,11 +42,12 @@
         <script src="js/leaflet-measure.js"></script>
         <script src="data/Favelas_2.js"></script>
         <script src="data/Estradasinterrupes_3.js"></script>
-        <script src="data/DiagnsticoTerapiaeApoioTcnico_4.js"></script>
-        <script src="data/AtenoPrimriaePreventiva_5.js"></script>
-        <script src="data/AtendimentoEspecializadoedeUrgncia_6.js"></script>
-        <script src="data/AtenoSadeemRegimesEspeciaiseComunitria_7.js"></script>
-        <script src="data/RegulaoGestoeInfraestruturadeSade_8.js"></script>
+        <script src="data/Aldeiasindgenas_4.js"></script>
+        <script src="data/DiagnsticoTerapiaeApoioTcnico_5.js"></script>
+        <script src="data/AtenoPrimriaePreventiva_6.js"></script>
+        <script src="data/AtendimentoEspecializadoedeUrgncia_7.js"></script>
+        <script src="data/AtenoSadeemRegimesEspeciaiseComunitria_8.js"></script>
+        <script src="data/RegulaoGestoeInfraestruturadeSade_9.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
@@ -290,7 +291,125 @@
         });
         bounds_group.addLayer(layer_Estradasinterrupes_3);
         map.addLayer(layer_Estradasinterrupes_3);
-        function pop_DiagnsticoTerapiaeApoioTcnico_4(feature, layer) {
+        function pop_Aldeiasindgenas_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">DSEI</th>\
+                        <td class="visible-with-data" id="DSEI">' + (feature.properties['DSEI'] !== null ? autolinker.link(feature.properties['DSEI'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Código polo</th>\
+                        <td class="visible-with-data" id="COD_POLO">' + (feature.properties['COD_POLO'] !== null ? autolinker.link(feature.properties['COD_POLO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Pólo base</th>\
+                        <td class="visible-with-data" id="POLO_BASE">' + (feature.properties['POLO_BASE'] !== null ? autolinker.link(feature.properties['POLO_BASE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Código aldeia</th>\
+                        <td class="visible-with-data" id="COD_ALDEIA">' + (feature.properties['COD_ALDEIA'] !== null ? autolinker.link(feature.properties['COD_ALDEIA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Aldeia</th>\
+                        <td class="visible-with-data" id="ALDEIA">' + (feature.properties['ALDEIA'] !== null ? autolinker.link(feature.properties['ALDEIA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Município</th>\
+                        <td class="visible-with-data" id="MUNICIPIO">' + (feature.properties['MUNICIPIO'] !== null ? autolinker.link(feature.properties['MUNICIPIO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Código do município</th>\
+                        <td class="visible-with-data" id="COD_MUNICI">' + (feature.properties['COD_MUNICI'] !== null ? autolinker.link(feature.properties['COD_MUNICI'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">UF</th>\
+                        <td class="visible-with-data" id="UF">' + (feature.properties['UF'] !== null ? autolinker.link(feature.properties['UF'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Latitude</th>\
+                        <td class="visible-with-data" id="LATITUDE">' + (feature.properties['LATITUDE'] !== null ? autolinker.link(feature.properties['LATITUDE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Longitude</th>\
+                        <td class="visible-with-data" id="LONGITUDE">' + (feature.properties['LONGITUDE'] !== null ? autolinker.link(feature.properties['LONGITUDE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">População</th>\
+                        <td class="visible-with-data" id="POPULACAO">' + (feature.properties['POPULACAO'] !== null ? autolinker.link(feature.properties['POPULACAO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Aldeia</th>\
+                        <td class="visible-with-data" id="ALDEIA_ATI">' + (feature.properties['ALDEIA_ATI'] !== null ? autolinker.link(feature.properties['ALDEIA_ATI'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Logística</th>\
+                        <td class="visible-with-data" id="LogIstica_">' + (feature.properties['LogIstica_'] !== null ? autolinker.link(feature.properties['LogIstica_'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Mobilidade</th>\
+                        <td class="visible-with-data" id="mobilidade">' + (feature.properties['mobilidade'] !== null ? autolinker.link(feature.properties['mobilidade'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Existe escola</th>\
+                        <td class="visible-with-data" id="HA_escola_">' + (feature.properties['HA_escola_'] !== null ? autolinker.link(feature.properties['HA_escola_'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Quantidade</th>\
+                        <td class="visible-with-data" id="Quantidade">' + (feature.properties['Quantidade'] !== null ? autolinker.link(feature.properties['Quantidade'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Aldeia pos</th>\
+                        <td class="visible-with-data" id="Aldeia_pos">' + (feature.properties['Aldeia_pos'] !== null ? autolinker.link(feature.properties['Aldeia_pos'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Informe</th>\
+                        <td class="visible-with-data" id="Informe_o_">' + (feature.properties['Informe_o_'] !== null ? autolinker.link(feature.properties['Informe_o_'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_Aldeiasindgenas_4_0() {
+            return {
+                pane: 'pane_Aldeiasindgenas_4',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 0.7,
+                fillColor: 'rgba(84,176,74,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Aldeiasindgenas_4');
+        map.getPane('pane_Aldeiasindgenas_4').style.zIndex = 404;
+        map.getPane('pane_Aldeiasindgenas_4').style['mix-blend-mode'] = 'normal';
+        var layer_Aldeiasindgenas_4 = new L.geoJson(json_Aldeiasindgenas_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Aldeiasindgenas_4',
+            layerName: 'layer_Aldeiasindgenas_4',
+            pane: 'pane_Aldeiasindgenas_4',
+            onEachFeature: pop_Aldeiasindgenas_4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.shapeMarker(latlng, style_Aldeiasindgenas_4_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Aldeiasindgenas_4);
+        map.addLayer(layer_Aldeiasindgenas_4);
+        function pop_DiagnsticoTerapiaeApoioTcnico_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">CNES</th>\
@@ -336,9 +455,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_DiagnsticoTerapiaeApoioTcnico_4_0() {
+        function style_DiagnsticoTerapiaeApoioTcnico_5_0() {
             return {
-                pane: 'pane_DiagnsticoTerapiaeApoioTcnico_4',
+                pane: 'pane_DiagnsticoTerapiaeApoioTcnico_5',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -352,27 +471,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_DiagnsticoTerapiaeApoioTcnico_4');
-        map.getPane('pane_DiagnsticoTerapiaeApoioTcnico_4').style.zIndex = 404;
-        map.getPane('pane_DiagnsticoTerapiaeApoioTcnico_4').style['mix-blend-mode'] = 'normal';
-        var layer_DiagnsticoTerapiaeApoioTcnico_4 = new L.geoJson(json_DiagnsticoTerapiaeApoioTcnico_4, {
+        map.createPane('pane_DiagnsticoTerapiaeApoioTcnico_5');
+        map.getPane('pane_DiagnsticoTerapiaeApoioTcnico_5').style.zIndex = 405;
+        map.getPane('pane_DiagnsticoTerapiaeApoioTcnico_5').style['mix-blend-mode'] = 'normal';
+        var layer_DiagnsticoTerapiaeApoioTcnico_5 = new L.geoJson(json_DiagnsticoTerapiaeApoioTcnico_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DiagnsticoTerapiaeApoioTcnico_4',
-            layerName: 'layer_DiagnsticoTerapiaeApoioTcnico_4',
-            pane: 'pane_DiagnsticoTerapiaeApoioTcnico_4',
-            onEachFeature: pop_DiagnsticoTerapiaeApoioTcnico_4,
+            dataVar: 'json_DiagnsticoTerapiaeApoioTcnico_5',
+            layerName: 'layer_DiagnsticoTerapiaeApoioTcnico_5',
+            pane: 'pane_DiagnsticoTerapiaeApoioTcnico_5',
+            onEachFeature: pop_DiagnsticoTerapiaeApoioTcnico_5,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_DiagnsticoTerapiaeApoioTcnico_4_0(feature));
+                return L.circleMarker(latlng, style_DiagnsticoTerapiaeApoioTcnico_5_0(feature));
             },
         });
-        bounds_group.addLayer(layer_DiagnsticoTerapiaeApoioTcnico_4);
-        map.addLayer(layer_DiagnsticoTerapiaeApoioTcnico_4);
-        function pop_AtenoPrimriaePreventiva_5(feature, layer) {
+        bounds_group.addLayer(layer_DiagnsticoTerapiaeApoioTcnico_5);
+        map.addLayer(layer_DiagnsticoTerapiaeApoioTcnico_5);
+        function pop_AtenoPrimriaePreventiva_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">CNES</th>\
@@ -418,9 +537,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_AtenoPrimriaePreventiva_5_0() {
+        function style_AtenoPrimriaePreventiva_6_0() {
             return {
-                pane: 'pane_AtenoPrimriaePreventiva_5',
+                pane: 'pane_AtenoPrimriaePreventiva_6',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -434,27 +553,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_AtenoPrimriaePreventiva_5');
-        map.getPane('pane_AtenoPrimriaePreventiva_5').style.zIndex = 405;
-        map.getPane('pane_AtenoPrimriaePreventiva_5').style['mix-blend-mode'] = 'normal';
-        var layer_AtenoPrimriaePreventiva_5 = new L.geoJson(json_AtenoPrimriaePreventiva_5, {
+        map.createPane('pane_AtenoPrimriaePreventiva_6');
+        map.getPane('pane_AtenoPrimriaePreventiva_6').style.zIndex = 406;
+        map.getPane('pane_AtenoPrimriaePreventiva_6').style['mix-blend-mode'] = 'normal';
+        var layer_AtenoPrimriaePreventiva_6 = new L.geoJson(json_AtenoPrimriaePreventiva_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_AtenoPrimriaePreventiva_5',
-            layerName: 'layer_AtenoPrimriaePreventiva_5',
-            pane: 'pane_AtenoPrimriaePreventiva_5',
-            onEachFeature: pop_AtenoPrimriaePreventiva_5,
+            dataVar: 'json_AtenoPrimriaePreventiva_6',
+            layerName: 'layer_AtenoPrimriaePreventiva_6',
+            pane: 'pane_AtenoPrimriaePreventiva_6',
+            onEachFeature: pop_AtenoPrimriaePreventiva_6,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_AtenoPrimriaePreventiva_5_0(feature));
+                return L.circleMarker(latlng, style_AtenoPrimriaePreventiva_6_0(feature));
             },
         });
-        bounds_group.addLayer(layer_AtenoPrimriaePreventiva_5);
-        map.addLayer(layer_AtenoPrimriaePreventiva_5);
-        function pop_AtendimentoEspecializadoedeUrgncia_6(feature, layer) {
+        bounds_group.addLayer(layer_AtenoPrimriaePreventiva_6);
+        map.addLayer(layer_AtenoPrimriaePreventiva_6);
+        function pop_AtendimentoEspecializadoedeUrgncia_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">CNES</th>\
@@ -500,9 +619,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_AtendimentoEspecializadoedeUrgncia_6_0() {
+        function style_AtendimentoEspecializadoedeUrgncia_7_0() {
             return {
-                pane: 'pane_AtendimentoEspecializadoedeUrgncia_6',
+                pane: 'pane_AtendimentoEspecializadoedeUrgncia_7',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -516,27 +635,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_AtendimentoEspecializadoedeUrgncia_6');
-        map.getPane('pane_AtendimentoEspecializadoedeUrgncia_6').style.zIndex = 406;
-        map.getPane('pane_AtendimentoEspecializadoedeUrgncia_6').style['mix-blend-mode'] = 'normal';
-        var layer_AtendimentoEspecializadoedeUrgncia_6 = new L.geoJson(json_AtendimentoEspecializadoedeUrgncia_6, {
+        map.createPane('pane_AtendimentoEspecializadoedeUrgncia_7');
+        map.getPane('pane_AtendimentoEspecializadoedeUrgncia_7').style.zIndex = 407;
+        map.getPane('pane_AtendimentoEspecializadoedeUrgncia_7').style['mix-blend-mode'] = 'normal';
+        var layer_AtendimentoEspecializadoedeUrgncia_7 = new L.geoJson(json_AtendimentoEspecializadoedeUrgncia_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_AtendimentoEspecializadoedeUrgncia_6',
-            layerName: 'layer_AtendimentoEspecializadoedeUrgncia_6',
-            pane: 'pane_AtendimentoEspecializadoedeUrgncia_6',
-            onEachFeature: pop_AtendimentoEspecializadoedeUrgncia_6,
+            dataVar: 'json_AtendimentoEspecializadoedeUrgncia_7',
+            layerName: 'layer_AtendimentoEspecializadoedeUrgncia_7',
+            pane: 'pane_AtendimentoEspecializadoedeUrgncia_7',
+            onEachFeature: pop_AtendimentoEspecializadoedeUrgncia_7,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_AtendimentoEspecializadoedeUrgncia_6_0(feature));
+                return L.circleMarker(latlng, style_AtendimentoEspecializadoedeUrgncia_7_0(feature));
             },
         });
-        bounds_group.addLayer(layer_AtendimentoEspecializadoedeUrgncia_6);
-        map.addLayer(layer_AtendimentoEspecializadoedeUrgncia_6);
-        function pop_AtenoSadeemRegimesEspeciaiseComunitria_7(feature, layer) {
+        bounds_group.addLayer(layer_AtendimentoEspecializadoedeUrgncia_7);
+        map.addLayer(layer_AtendimentoEspecializadoedeUrgncia_7);
+        function pop_AtenoSadeemRegimesEspeciaiseComunitria_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">CNES</th>\
@@ -582,9 +701,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_AtenoSadeemRegimesEspeciaiseComunitria_7_0() {
+        function style_AtenoSadeemRegimesEspeciaiseComunitria_8_0() {
             return {
-                pane: 'pane_AtenoSadeemRegimesEspeciaiseComunitria_7',
+                pane: 'pane_AtenoSadeemRegimesEspeciaiseComunitria_8',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -598,27 +717,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_7');
-        map.getPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_7').style.zIndex = 407;
-        map.getPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_7').style['mix-blend-mode'] = 'normal';
-        var layer_AtenoSadeemRegimesEspeciaiseComunitria_7 = new L.geoJson(json_AtenoSadeemRegimesEspeciaiseComunitria_7, {
+        map.createPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_8');
+        map.getPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_8').style.zIndex = 408;
+        map.getPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_8').style['mix-blend-mode'] = 'normal';
+        var layer_AtenoSadeemRegimesEspeciaiseComunitria_8 = new L.geoJson(json_AtenoSadeemRegimesEspeciaiseComunitria_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_AtenoSadeemRegimesEspeciaiseComunitria_7',
-            layerName: 'layer_AtenoSadeemRegimesEspeciaiseComunitria_7',
-            pane: 'pane_AtenoSadeemRegimesEspeciaiseComunitria_7',
-            onEachFeature: pop_AtenoSadeemRegimesEspeciaiseComunitria_7,
+            dataVar: 'json_AtenoSadeemRegimesEspeciaiseComunitria_8',
+            layerName: 'layer_AtenoSadeemRegimesEspeciaiseComunitria_8',
+            pane: 'pane_AtenoSadeemRegimesEspeciaiseComunitria_8',
+            onEachFeature: pop_AtenoSadeemRegimesEspeciaiseComunitria_8,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_AtenoSadeemRegimesEspeciaiseComunitria_7_0(feature));
+                return L.circleMarker(latlng, style_AtenoSadeemRegimesEspeciaiseComunitria_8_0(feature));
             },
         });
-        bounds_group.addLayer(layer_AtenoSadeemRegimesEspeciaiseComunitria_7);
-        map.addLayer(layer_AtenoSadeemRegimesEspeciaiseComunitria_7);
-        function pop_RegulaoGestoeInfraestruturadeSade_8(feature, layer) {
+        bounds_group.addLayer(layer_AtenoSadeemRegimesEspeciaiseComunitria_8);
+        map.addLayer(layer_AtenoSadeemRegimesEspeciaiseComunitria_8);
+        function pop_RegulaoGestoeInfraestruturadeSade_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">CNES</th>\
@@ -664,9 +783,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_RegulaoGestoeInfraestruturadeSade_8_0() {
+        function style_RegulaoGestoeInfraestruturadeSade_9_0() {
             return {
-                pane: 'pane_RegulaoGestoeInfraestruturadeSade_8',
+                pane: 'pane_RegulaoGestoeInfraestruturadeSade_9',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -680,26 +799,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_RegulaoGestoeInfraestruturadeSade_8');
-        map.getPane('pane_RegulaoGestoeInfraestruturadeSade_8').style.zIndex = 408;
-        map.getPane('pane_RegulaoGestoeInfraestruturadeSade_8').style['mix-blend-mode'] = 'normal';
-        var layer_RegulaoGestoeInfraestruturadeSade_8 = new L.geoJson(json_RegulaoGestoeInfraestruturadeSade_8, {
+        map.createPane('pane_RegulaoGestoeInfraestruturadeSade_9');
+        map.getPane('pane_RegulaoGestoeInfraestruturadeSade_9').style.zIndex = 409;
+        map.getPane('pane_RegulaoGestoeInfraestruturadeSade_9').style['mix-blend-mode'] = 'normal';
+        var layer_RegulaoGestoeInfraestruturadeSade_9 = new L.geoJson(json_RegulaoGestoeInfraestruturadeSade_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_RegulaoGestoeInfraestruturadeSade_8',
-            layerName: 'layer_RegulaoGestoeInfraestruturadeSade_8',
-            pane: 'pane_RegulaoGestoeInfraestruturadeSade_8',
-            onEachFeature: pop_RegulaoGestoeInfraestruturadeSade_8,
+            dataVar: 'json_RegulaoGestoeInfraestruturadeSade_9',
+            layerName: 'layer_RegulaoGestoeInfraestruturadeSade_9',
+            pane: 'pane_RegulaoGestoeInfraestruturadeSade_9',
+            onEachFeature: pop_RegulaoGestoeInfraestruturadeSade_9,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_RegulaoGestoeInfraestruturadeSade_8_0(feature));
+                return L.circleMarker(latlng, style_RegulaoGestoeInfraestruturadeSade_9_0(feature));
             },
         });
-        bounds_group.addLayer(layer_RegulaoGestoeInfraestruturadeSade_8);
-        map.addLayer(layer_RegulaoGestoeInfraestruturadeSade_8);
+        bounds_group.addLayer(layer_RegulaoGestoeInfraestruturadeSade_9);
+        map.addLayer(layer_RegulaoGestoeInfraestruturadeSade_9);
             var abstract = new L.Control({'position':'bottomleft'});
             abstract.onAdd = function (map) {
                 this._div = L.DomUtil.create('div',
@@ -728,11 +847,12 @@
         var baseMaps = {};
         var overlaysTree = [
         {label: '<b>Estabelecimentos de saúde</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/RegulaoGestoeInfraestruturadeSade_8.png" /> Regulação, Gestão e Infraestrutura de Saúde', layer: layer_RegulaoGestoeInfraestruturadeSade_8},
-            {label: '<img src="legend/AtenoSadeemRegimesEspeciaiseComunitria_7.png" /> Atenção à Saúde em Regimes Especiais e Comunitária', layer: layer_AtenoSadeemRegimesEspeciaiseComunitria_7},
-            {label: '<img src="legend/AtendimentoEspecializadoedeUrgncia_6.png" /> Atendimento Especializado e de Urgência', layer: layer_AtendimentoEspecializadoedeUrgncia_6},
-            {label: '<img src="legend/AtenoPrimriaePreventiva_5.png" /> Atenção Primária e Preventiva', layer: layer_AtenoPrimriaePreventiva_5},
-            {label: '<img src="legend/DiagnsticoTerapiaeApoioTcnico_4.png" /> Diagnóstico, Terapia e Apoio Técnico', layer: layer_DiagnsticoTerapiaeApoioTcnico_4},]},
+            {label: '<img src="legend/RegulaoGestoeInfraestruturadeSade_9.png" /> Regulação, Gestão e Infraestrutura de Saúde', layer: layer_RegulaoGestoeInfraestruturadeSade_9},
+            {label: '<img src="legend/AtenoSadeemRegimesEspeciaiseComunitria_8.png" /> Atenção à Saúde em Regimes Especiais e Comunitária', layer: layer_AtenoSadeemRegimesEspeciaiseComunitria_8},
+            {label: '<img src="legend/AtendimentoEspecializadoedeUrgncia_7.png" /> Atendimento Especializado e de Urgência', layer: layer_AtendimentoEspecializadoedeUrgncia_7},
+            {label: '<img src="legend/AtenoPrimriaePreventiva_6.png" /> Atenção Primária e Preventiva', layer: layer_AtenoPrimriaePreventiva_6},
+            {label: '<img src="legend/DiagnsticoTerapiaeApoioTcnico_5.png" /> Diagnóstico, Terapia e Apoio Técnico', layer: layer_DiagnsticoTerapiaeApoioTcnico_5},]},
+            {label: '<img src="legend/Aldeiasindgenas_4.png" /> Aldeias indígenas', layer: layer_Aldeiasindgenas_4},
             {label: 'Estradas interrupções<br /><table><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_3_BloqueioTotal0.png" /></td><td>Bloqueio Total</td></tr><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_3_BloqueioParcial1.png" /></td><td>Bloqueio Parcial</td></tr><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_3_Liberado2.png" /></td><td>Liberado</td></tr></table>', layer: layer_Estradasinterrupes_3},
             {label: '<img src="legend/Favelas_2.png" /> Favelas', layer: layer_Favelas_2},
             {label: "Área inundada (radar)", layer: layer_reainundadaradar_1},

@@ -1,6 +1,6 @@
 ---
 title: "Emergência em Saúde Pública no Rio Grande do Sul"
-subtitle: "Observatório de Clima e Saúde, ICICT, Fiocruz"
+subtitle: "[Observatório de Clima e Saúde, ICICT, Fiocruz](https://climaesaude.icict.fiocruz.br){target='_blank'}"
 lang: pt
 toc: false
 ---

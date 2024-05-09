@@ -5,9 +5,15 @@ lang: pt
 
 ## Manchas de inundação
 
-Geonetcast Project, University of Wiscosin-Madison
+GEONETCast-Americas Floods Project, University of Wiscosin-Madison
 
-<http://geonetcast.ssec.wisc.edu/geonetcast/CIMSS/Flood-Composite/>
+-   Visualização: <http://realearth.ssec.wisc.edu/s/02ZVu1>
+
+-   Download: <http://geonetcast.ssec.wisc.edu/geonetcast/CIMSS/Flood-Composite/>
+
+Processamento de imagem SAR do Sentinel1
+
+-   Visualização: <https://re.ssec.wisc.edu/s/9304t5>
 
 ## Produtos do INPE e parceiros
 

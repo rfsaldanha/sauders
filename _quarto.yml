@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs/
+
+website:
+  title: "Emergência RS"
+  page-navigation: true
+  back-to-top-navigation: true
+  google-analytics: "G-2M7VLSRDCB"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Início
+      - about.qmd
+  page-footer:
+    background: light
+    left: "![](images/logo_fiocruz.png){width=30%} ![](images/logo_icict_150.png){width=30%}"
+    
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

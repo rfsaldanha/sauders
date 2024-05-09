@@ -1,0 +1,15 @@
+---
+title: "Emergência em Saúde Pública no Rio Grande do Sul"
+subtitle: "Observatório de Clima e Saúde, ICICT, Fiocruz"
+lang: pt
+toc: false
+---
+
+## Mapas
+
+-   [Estabelecimentos de saúde e áreas de inundação](https://rfsaldanha.github.io/sauders/maps/cnefe/index.html)
+-   Setores censitários e área de inundação
+
+## Bases cartográficas
+
+-   Repositório de bases cartográficas

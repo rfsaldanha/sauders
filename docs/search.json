@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Emergência em Saúde Pública no Rio Grande do Sul",
-    "section": "",
-    "text": "Estabelecimentos de saúde e áreas de inundação"
-  },
-  {
-    "objectID": "index.html#mapas",
-    "href": "index.html#mapas",
-    "title": "Emergência em Saúde Pública no Rio Grande do Sul",
-    "section": "",
-    "text": "Estabelecimentos de saúde e áreas de inundação"
-  },
-  {
-    "objectID": "index.html#bases-de-dados-para-download",
-    "href": "index.html#bases-de-dados-para-download",
-    "title": "Emergência em Saúde Pública no Rio Grande do Sul",
-    "section": "Bases de dados para download",
-    "text": "Bases de dados para download"
-  },
-  {
     "objectID": "resources.html",
     "href": "resources.html",
     "title": "Recursos de interesse",
@@ -33,13 +12,6 @@
     "title": "Recursos de interesse",
     "section": "",
     "text": "GEONETCast-Americas Floods Project, University of Wiscosin-Madison\n\nVisualização: http://realearth.ssec.wisc.edu/s/02ZVu1\nDownload: http://geonetcast.ssec.wisc.edu/geonetcast/CIMSS/Flood-Composite/\n\nProcessamento de imagem SAR do Sentinel1\n\nVisualização: https://re.ssec.wisc.edu/s/9304t5"
-  },
-  {
-    "objectID": "resources.html#imagens-de-satélite",
-    "href": "resources.html#imagens-de-satélite",
-    "title": "Recursos de interesse",
-    "section": "Imagens de satélite",
-    "text": "Imagens de satélite\n\nSentinel2, camada WMS\n\nhttps://maps.disasters.nasa.gov/arcgis/home/item.html?id=67cd15b974c44edc9cb197ba5e7bd19d"
   },
   {
     "objectID": "resources.html#produtos-do-inpe-e-parceiros",
@@ -56,10 +28,24 @@
     "text": "Produtos da NASA\nhttps://maps.disasters.nasa.gov/arcgis/apps/MinimalGallery/index.html?appid=5cb71eba32d949f6bc9b6ac399199477"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Emergência em Saúde Pública no Rio Grande do Sul",
+    "section": "",
+    "text": "Estabelecimentos de saúde e áreas de inundação"
+  },
+  {
     "objectID": "index.html#mapas-interativos",
     "href": "index.html#mapas-interativos",
     "title": "Emergência em Saúde Pública no Rio Grande do Sul",
     "section": "",
     "text": "Estabelecimentos de saúde e áreas de inundação"
+  },
+  {
+    "objectID": "index.html#bases-de-dados-para-download",
+    "href": "index.html#bases-de-dados-para-download",
+    "title": "Emergência em Saúde Pública no Rio Grande do Sul",
+    "section": "Bases de dados para download",
+    "text": "Bases de dados para download"
   }
 ]

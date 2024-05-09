@@ -1,0 +1,20 @@
+---
+title: "Recursos de interesse"
+lang: pt
+---
+
+## Manchas de inundação
+
+Geonetcast Project, University of Wiscosin-Madison
+
+<http://geonetcast.ssec.wisc.edu/geonetcast/CIMSS/Flood-Composite/>
+
+## Produtos do INPE e parceiros
+
+<https://disasterscharter.org/web/guest/activations/-/article/flood-in-brazil-activation-875->
+
+## Produtos da NASA
+
+<https://maps.disasters.nasa.gov/arcgis/apps/MinimalGallery/index.html?appid=5cb71eba32d949f6bc9b6ac399199477>
+
+## 

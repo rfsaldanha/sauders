@@ -13,6 +13,8 @@ website:
     left:
       - href: index.qmd
         text: Início
+      - href: resources.qmd
+        text: Recursos externos
   page-footer:
     background: light
     left: "![](images/logo_fiocruz.png){width=30%} ![](images/logo_icict_150.png){width=30%}"

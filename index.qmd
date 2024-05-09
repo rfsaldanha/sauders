@@ -5,7 +5,7 @@ lang: pt
 toc: false
 ---
 
-## Mapas
+## Mapas interativos
 
 -   [Estabelecimentos de saúde e áreas de inundação](https://rfsaldanha.github.io/sauders/maps/cnes){target="_blank"}
 

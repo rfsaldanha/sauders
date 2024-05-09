@@ -7,7 +7,7 @@ toc: false
 
 ## Mapas
 
--   [Estabelecimentos de saúde e áreas de inundação](https://rfsaldanha.github.io/sauders/maps/cnefe/index.html)
+-   [Estabelecimentos de saúde e áreas de inundação](https://rfsaldanha.github.io/sauders/maps/cnes){target="_blank"}
 -   Setores censitários e área de inundação
 
 ## Bases cartográficas

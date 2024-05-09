@@ -9,4 +9,6 @@ toc: false
 
 -   [Estabelecimentos de saúde e áreas de inundação](https://rfsaldanha.github.io/sauders/maps/cnes){target="_blank"}
 
--   Setores censitários e área de inundação
+## Bases de dados para download
+
+[![](https://zenodo.org/badge/DOI/10.5281/zenodo.11164564.svg)](https://doi.org/10.5281/zenodo.11164564){target="_blank"}

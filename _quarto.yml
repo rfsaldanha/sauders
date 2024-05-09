@@ -9,10 +9,10 @@ website:
   back-to-top-navigation: true
   google-analytics: "G-2M7VLSRDCB"
   navbar:
+    background: primary
     left:
       - href: index.qmd
         text: Início
-      - about.qmd
   page-footer:
     background: light
     left: "![](images/logo_fiocruz.png){width=30%} ![](images/logo_icict_150.png){width=30%}"

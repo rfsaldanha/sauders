@@ -7,6 +7,7 @@ toc: false
 
 ## Mapas interativos
 
+-   [Imagens de satélite](https://rfsaldanha.github.io/sauders/maps/imagens){target="_blank"}
 -   [Estabelecimentos de saúde e áreas de inundação](https://rfsaldanha.github.io/sauders/maps/cnes){target="_blank"}
 
 ## Bases de dados para download

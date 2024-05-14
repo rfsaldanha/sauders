@@ -7,9 +7,65 @@ toc: false
 
 ## Mapas interativos
 
--   [Imagens de satélite](https://rfsaldanha.github.io/sauders/maps/imagens){target="_blank"}
 -   [Estabelecimentos de saúde e áreas de inundação](https://rfsaldanha.github.io/sauders/maps/cnes){target="_blank"}
 
 ## Bases de dados para download
 
-[![](https://zenodo.org/badge/DOI/10.5281/zenodo.11164564.svg)](https://doi.org/10.5281/zenodo.11164564){target="_blank"}
+[![](https://zenodo.org/badge/DOI/10.5281/zenodo.11164564.svg)](https://doi.org/10.5281/zenodo.11164564)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# Packages
+library(tidyverse)
+library(terra)
+library(sf)
+library(rmapshaper)
+library(animation)
+
+files_path <- "~/rio_grande_do_sul_2024/data_lake/geocastnet" 
+
+rs_geom <- read_sf("~/rio_grande_do_sul_2024/data_lake/base_cartografica_estado/Secao_11_Limites/Unidade_Federacao.shp") |>
+  ms_simplify()
+
+files_list <- list.files(files_path, full.names = TRUE, pattern = "*.tif")
+
+files_df <- tibble(
+  path = files_list
+) |>
+  mutate(
+    date = as_date(substr(path, 94, 101)),
+    part = substr(path, 103, 109)
+  ) |>
+  arrange(date, part)
+
+files_merge <- rast()
+
+for(d in unique(files_df$date)){
+  message(d)
+  
+  files_df_subset <- files_df |>
+    filter(date == d)
+  
+  tmp_merge <- vrt(files_df_subset$path)
+  time(tmp_merge) <- as_date(d)
+  
+  files_merge <- c(files_merge, tmp_merge)
+}
+
+names(files_merge) <- time(files_merge)
+
+files_merge <- crop(files_merge, rs_geom)
+
+saveVideo({
+  for(i in 1:length(time(files_merge))){
+    plot(files_merge[[i]], main = as.character(time(files_merge[[i]])))
+  }
+}, movie.name = "teste.mp4", img.name = "Rplot", ani.height = 800, ani.width = 800)
+```
+
+
+<video autoplay loop muted playsinline controls>
+  <source src="animation.mp4" type="video/mp4">
+</video>

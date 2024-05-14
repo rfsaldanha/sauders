@@ -28,18 +28,25 @@
     "text": "Produtos da NASA\nhttps://maps.disasters.nasa.gov/arcgis/apps/MinimalGallery/index.html?appid=5cb71eba32d949f6bc9b6ac399199477"
   },
   {
+    "objectID": "resources.html#repositório-de-dados-ufrgs",
+    "href": "resources.html#repositório-de-dados-ufrgs",
+    "title": "Recursos de interesse",
+    "section": "Repositório de dados UFRGS",
+    "text": "Repositório de dados UFRGS\nhttps://zenodo.org/doi/10.5281/zenodo.11164049"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Emergência em Saúde Pública no Rio Grande do Sul",
     "section": "",
-    "text": "Imagens de satélite\nEstabelecimentos de saúde e áreas de inundação"
+    "text": "Estabelecimentos de saúde e áreas de inundação"
   },
   {
     "objectID": "index.html#mapas-interativos",
     "href": "index.html#mapas-interativos",
     "title": "Emergência em Saúde Pública no Rio Grande do Sul",
     "section": "",
-    "text": "Imagens de satélite\nEstabelecimentos de saúde e áreas de inundação"
+    "text": "Estabelecimentos de saúde e áreas de inundação"
   },
   {
     "objectID": "index.html#bases-de-dados-para-download",
@@ -47,12 +54,5 @@
     "title": "Emergência em Saúde Pública no Rio Grande do Sul",
     "section": "Bases de dados para download",
     "text": "Bases de dados para download"
-  },
-  {
-    "objectID": "resources.html#repositório-de-dados-ufrgs",
-    "href": "resources.html#repositório-de-dados-ufrgs",
-    "title": "Recursos de interesse",
-    "section": "Repositório de dados UFRGS",
-    "text": "Repositório de dados UFRGS\nhttps://zenodo.org/doi/10.5281/zenodo.11164049"
   }
 ]

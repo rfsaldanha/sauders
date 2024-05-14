@@ -38,9 +38,9 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="js/leaflet.wms.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
+        <script src="data/UFRS_3.js"></script>
         <script src="data/Territrioquilombola_4.js"></script>
         <script src="data/Favelas_5.js"></script>
         <script src="data/Estradasinterrupes_6.js"></script>
@@ -53,7 +53,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-30.787187299140616,-52.197501764666654],[-29.315596283220113,-49.95638249543529]]);
+        }).fitBounds([[-33.917801214474984,-57.95504798517088],[-26.915582530524933,-49.38516840182902]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -108,38 +108,56 @@
         });
         layer_OpenStreetMaps_0;
         map.addLayer(layer_OpenStreetMaps_0);
-        map.createPane('pane_Coresreais6demaio_1');
-        map.getPane('pane_Coresreais6demaio_1').style.zIndex = 401;
-        var layer_Coresreais6demaio_1 = L.WMS.layer("https://maps.disasters.nasa.gov/ags03/services/brasil_flood_202405/sentinel2/MapServer/WMSServer", "5", {
-            pane: 'pane_Coresreais6demaio_1',
-            format: 'image/jpeg',
-            uppercase: true,
-            transparent: true,
-            continuousWorld : true,
-            tiled: true,
-            info_format: 'text/html',
-            opacity: 1,
-            identify: false,
+        map.createPane('pane_part_a_1');
+        map.getPane('pane_part_a_1').style.zIndex = 401;
+        var img_part_a_1 = 'data/part_a_1.png';
+        var img_bounds_part_a_1 = [[-33.917801214,-57.955047985],[-26.915582531,-49.385168402]];
+        var layer_part_a_1 = new L.imageOverlay(img_part_a_1,
+                                              img_bounds_part_a_1,
+                                              {pane: 'pane_part_a_1'});
+        bounds_group.addLayer(layer_part_a_1);
+        map.addLayer(layer_part_a_1);
+        map.createPane('pane_part_b_2');
+        map.getPane('pane_part_b_2').style.zIndex = 402;
+        var img_part_b_2 = 'data/part_b_2.png';
+        var img_bounds_part_b_2 = [[-33.917801214,-57.955047985],[-26.915582531,-49.385168402]];
+        var layer_part_b_2 = new L.imageOverlay(img_part_b_2,
+                                              img_bounds_part_b_2,
+                                              {pane: 'pane_part_b_2'});
+        bounds_group.addLayer(layer_part_b_2);
+        map.addLayer(layer_part_b_2);
+        function pop_UFRS_3(feature, layer) {
+        }
+
+        function style_UFRS_3_0() {
+            return {
+                pane: 'pane_UFRS_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(183,72,75,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_UFRS_3');
+        map.getPane('pane_UFRS_3').style.zIndex = 403;
+        map.getPane('pane_UFRS_3').style['mix-blend-mode'] = 'normal';
+        var layer_UFRS_3 = new L.geoJson(json_UFRS_3, {
             attribution: '',
+            interactive: true,
+            dataVar: 'json_UFRS_3',
+            layerName: 'layer_UFRS_3',
+            pane: 'pane_UFRS_3',
+            onEachFeature: pop_UFRS_3,
+            style: style_UFRS_3_0,
         });
-        map.createPane('pane_reainundadaestado_2');
-        map.getPane('pane_reainundadaestado_2').style.zIndex = 402;
-        var img_reainundadaestado_2 = 'data/reainundadaestado_2.png';
-        var img_bounds_reainundadaestado_2 = [[-33.01614023145458,-59.401744181065425],[-26.32900723682483,-46.29151761166124]];
-        var layer_reainundadaestado_2 = new L.imageOverlay(img_reainundadaestado_2,
-                                              img_bounds_reainundadaestado_2,
-                                              {pane: 'pane_reainundadaestado_2'});
-        bounds_group.addLayer(layer_reainundadaestado_2);
-        map.addLayer(layer_reainundadaestado_2);
-        map.createPane('pane_reainundadaradarPOA_3');
-        map.getPane('pane_reainundadaradarPOA_3').style.zIndex = 403;
-        var img_reainundadaradarPOA_3 = 'data/reainundadaradarPOA_3.png';
-        var img_bounds_reainundadaradarPOA_3 = [[-30.515867159159438,-52.14414178206591],[-29.586916423201295,-50.00974247803604]];
-        var layer_reainundadaradarPOA_3 = new L.imageOverlay(img_reainundadaradarPOA_3,
-                                              img_bounds_reainundadaradarPOA_3,
-                                              {pane: 'pane_reainundadaradarPOA_3'});
-        bounds_group.addLayer(layer_reainundadaradarPOA_3);
-        map.addLayer(layer_reainundadaradarPOA_3);
+        bounds_group.addLayer(layer_UFRS_3);
+        map.addLayer(layer_UFRS_3);
         function pop_Territrioquilombola_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -734,8 +752,7 @@
                         <td class="visible-with-data" id="tp_unid">' + (feature.properties['tp_unid'] !== null ? autolinker.link(feature.properties['tp_unid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Atendimento ambulatorial SUS</th>\
-                        <td class="visible-with-data" id="amb_sus">' + (feature.properties['amb_sus'] !== null ? autolinker.link(feature.properties['amb_sus'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="amb_sus"colspan="2"><strong>Atendimento ambulatorial SUS</strong><br />' + (feature.properties['amb_sus'] !== null ? autolinker.link(feature.properties['amb_sus'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Nome</th>\
@@ -899,7 +916,7 @@
                 abstract.show = function () {
                     this._div.classList.remove("abstract");
                     this._div.classList.add("abstractUncollapsed");
-                    this._div.innerHTML = 'Observatório de Clima e Saúde<br />ICICT,  Fiocruz<br />v20240508_002';
+                    this._div.innerHTML = 'Observatório de Clima e Saúde<br />ICICT,  Fiocruz<br />v20240514_001';
             };
             abstract.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
@@ -924,11 +941,10 @@
             {label: 'Estradas interrupções<br /><table><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_BloqueioTotal0.png" /></td><td>Bloqueio Total</td></tr><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_BloqueioParcial1.png" /></td><td>Bloqueio Parcial</td></tr><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_Liberado2.png" /></td><td>Liberado</td></tr></table>', layer: layer_Estradasinterrupes_6},
             {label: '<img src="legend/Favelas_5.png" /> Favelas', layer: layer_Favelas_5},
             {label: '<img src="legend/Territrioquilombola_4.png" /> Território quilombola', layer: layer_Territrioquilombola_4},
+            {label: '<img src="legend/UFRS_3.png" /> UF RS', layer: layer_UFRS_3},
         {label: '<b>Mancha área inundada</b>', selectAllCheckbox: true, children: [
-            {label: "Área inundada (radar, POA)", layer: layer_reainundadaradarPOA_3},
-            {label: "Área inundada (estado)", layer: layer_reainundadaestado_2},]},
-        {label: '<b>Imagens Sentinel2</b>', selectAllCheckbox: true, children: [
-            {label: "Cores reais,  6 de maio", layer: layer_Coresreais6demaio_1},]},
+            {label: "part_b", layer: layer_part_b_2},
+            {label: "part_a", layer: layer_part_a_1},]},
             {label: "OpenStreetMaps", layer: layer_OpenStreetMaps_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -955,6 +971,6 @@
           gtag('js', new Date());
 
           gtag('config', 'G-2M7VLSRDCB');
-        </script>
+        </script>        
     </body>
 </html>

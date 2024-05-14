@@ -45,15 +45,19 @@
         <script src="data/Favelas_5.js"></script>
         <script src="data/Estradasinterrupes_6.js"></script>
         <script src="data/Aldeiasindgenas_7.js"></script>
-        <script src="data/DiagnsticoTerapiaeApoioTcnico_8.js"></script>
-        <script src="data/AtenoPrimriaePreventiva_9.js"></script>
-        <script src="data/AtendimentoEspecializadoedeUrgncia_10.js"></script>
-        <script src="data/AtenoSadeemRegimesEspeciaiseComunitria_11.js"></script>
-        <script src="data/RegulaoGestoeInfraestruturadeSade_12.js"></script>
+        <script src="data/Estabelecimentosagropecurios_8.js"></script>
+        <script src="data/Estabelecimentosescolares_9.js"></script>
+        <script src="data/Estabelecimentosreligiosos_10.js"></script>
+        <script src="data/Pontosdecaptaodegua_11.js"></script>
+        <script src="data/DiagnsticoTerapiaeApoioTcnico_12.js"></script>
+        <script src="data/AtenoPrimriaePreventiva_13.js"></script>
+        <script src="data/AtendimentoEspecializadoedeUrgncia_14.js"></script>
+        <script src="data/AtenoSadeemRegimesEspeciaiseComunitria_15.js"></script>
+        <script src="data/RegulaoGestoeInfraestruturadeSade_16.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-33.917801214474984,-57.95504798517088],[-26.915582530524933,-49.38516840182902]]);
+        }).fitBounds([[-33.915016944449974,-57.96754827961566],[-26.915650439549907,-49.372668107384236]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -495,43 +499,31 @@
         });
         bounds_group.addLayer(layer_Aldeiasindgenas_7);
         map.addLayer(layer_Aldeiasindgenas_7);
-        function pop_DiagnsticoTerapiaeApoioTcnico_8(feature, layer) {
+        function pop_Estabelecimentosagropecurios_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">CNES</th>\
-                        <td class="visible-with-data" id="cnes">' + (feature.properties['cnes'] !== null ? autolinker.link(feature.properties['cnes'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">"COD_UF"</th>\
+                        <td class="visible-with-data" id=""COD_UF"">' + (feature.properties['"COD_UF"'] !== null ? autolinker.link(feature.properties['"COD_UF"'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tipo unidade</th>\
-                        <td class="visible-with-data" id="tp_unid">' + (feature.properties['tp_unid'] !== null ? autolinker.link(feature.properties['tp_unid'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">"COD_MUN"</th>\
+                        <td class="visible-with-data" id=""COD_MUN"">' + (feature.properties['"COD_MUN"'] !== null ? autolinker.link(feature.properties['"COD_MUN"'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Atendimento ambulatorial SUS</th>\
-                        <td class="visible-with-data" id="amb_sus">' + (feature.properties['amb_sus'] !== null ? autolinker.link(feature.properties['amb_sus'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">"COD_ESPEC</th>\
+                        <td class="visible-with-data" id=""COD_ESPEC">' + (feature.properties['"COD_ESPEC'] !== null ? autolinker.link(feature.properties['"COD_ESPEC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="nome">' + (feature.properties['nome'] !== null ? autolinker.link(feature.properties['nome'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">"LATITUDE"</th>\
+                        <td class="visible-with-data" id=""LATITUDE"">' + (feature.properties['"LATITUDE"'] !== null ? autolinker.link(feature.properties['"LATITUDE"'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Endereço</th>\
-                        <td class="visible-with-data" id="end_log">' + (feature.properties['end_log'] !== null ? autolinker.link(feature.properties['end_log'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">"LONGITUDE</th>\
+                        <td class="visible-with-data" id=""LONGITUDE">' + (feature.properties['"LONGITUDE'] !== null ? autolinker.link(feature.properties['"LONGITUDE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Número</th>\
-                        <td class="visible-with-data" id="end_num">' + (feature.properties['end_num'] !== null ? autolinker.link(feature.properties['end_num'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Bairro</th>\
-                        <td class="visible-with-data" id="end_bairro">' + (feature.properties['end_bairro'] !== null ? autolinker.link(feature.properties['end_bairro'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Telefone</th>\
-                        <td class="visible-with-data" id="end_tel">' + (feature.properties['end_tel'] !== null ? autolinker.link(feature.properties['end_tel'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">E-mail</th>\
-                        <td class="visible-with-data" id="end_email">' + (feature.properties['end_email'] !== null ? autolinker.link(feature.properties['end_email'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">"NV_GEO_CO</th>\
+                        <td class="visible-with-data" id=""NV_GEO_CO">' + (feature.properties['"NV_GEO_CO'] !== null ? autolinker.link(feature.properties['"NV_GEO_CO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -541,9 +533,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_DiagnsticoTerapiaeApoioTcnico_8_0() {
+        function style_Estabelecimentosagropecurios_8_0() {
             return {
-                pane: 'pane_DiagnsticoTerapiaeApoioTcnico_8',
+                pane: 'pane_Estabelecimentosagropecurios_8',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -553,79 +545,75 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(125,139,143,1.0)',
+                fillColor: 'rgba(231,113,72,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_DiagnsticoTerapiaeApoioTcnico_8');
-        map.getPane('pane_DiagnsticoTerapiaeApoioTcnico_8').style.zIndex = 408;
-        map.getPane('pane_DiagnsticoTerapiaeApoioTcnico_8').style['mix-blend-mode'] = 'normal';
-        var layer_DiagnsticoTerapiaeApoioTcnico_8 = new L.geoJson(json_DiagnsticoTerapiaeApoioTcnico_8, {
+        map.createPane('pane_Estabelecimentosagropecurios_8');
+        map.getPane('pane_Estabelecimentosagropecurios_8').style.zIndex = 408;
+        map.getPane('pane_Estabelecimentosagropecurios_8').style['mix-blend-mode'] = 'normal';
+        var layer_Estabelecimentosagropecurios_8 = new L.geoJson(json_Estabelecimentosagropecurios_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DiagnsticoTerapiaeApoioTcnico_8',
-            layerName: 'layer_DiagnsticoTerapiaeApoioTcnico_8',
-            pane: 'pane_DiagnsticoTerapiaeApoioTcnico_8',
-            onEachFeature: pop_DiagnsticoTerapiaeApoioTcnico_8,
+            dataVar: 'json_Estabelecimentosagropecurios_8',
+            layerName: 'layer_Estabelecimentosagropecurios_8',
+            pane: 'pane_Estabelecimentosagropecurios_8',
+            onEachFeature: pop_Estabelecimentosagropecurios_8,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_DiagnsticoTerapiaeApoioTcnico_8_0(feature));
+                return L.circleMarker(latlng, style_Estabelecimentosagropecurios_8_0(feature));
             },
         });
-        bounds_group.addLayer(layer_DiagnsticoTerapiaeApoioTcnico_8);
-        map.addLayer(layer_DiagnsticoTerapiaeApoioTcnico_8);
-        function pop_AtenoPrimriaePreventiva_9(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">CNES</th>\
-                        <td class="visible-with-data" id="cnes">' + (feature.properties['cnes'] !== null ? autolinker.link(feature.properties['cnes'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Tipo unidade</th>\
-                        <td class="visible-with-data" id="tp_unid">' + (feature.properties['tp_unid'] !== null ? autolinker.link(feature.properties['tp_unid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Atendimento ambulatorial SUS</th>\
-                        <td class="visible-with-data" id="amb_sus">' + (feature.properties['amb_sus'] !== null ? autolinker.link(feature.properties['amb_sus'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="nome">' + (feature.properties['nome'] !== null ? autolinker.link(feature.properties['nome'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Endereço</th>\
-                        <td class="visible-with-data" id="end_log">' + (feature.properties['end_log'] !== null ? autolinker.link(feature.properties['end_log'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Número</th>\
-                        <td class="visible-with-data" id="end_num">' + (feature.properties['end_num'] !== null ? autolinker.link(feature.properties['end_num'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Bairro</th>\
-                        <td class="visible-with-data" id="end_bairro">' + (feature.properties['end_bairro'] !== null ? autolinker.link(feature.properties['end_bairro'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Telefone</th>\
-                        <td class="visible-with-data" id="end_tel">' + (feature.properties['end_tel'] !== null ? autolinker.link(feature.properties['end_tel'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">E-mail</th>\
-                        <td class="visible-with-data" id="end_email">' + (feature.properties['end_email'] !== null ? autolinker.link(feature.properties['end_email'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-            var popup = layer.getPopup();
-            var content = popup.getContent();
-            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
-            popup.setContent(updatedContent);
+        bounds_group.addLayer(layer_Estabelecimentosagropecurios_8);
+        map.addLayer(layer_Estabelecimentosagropecurios_8);
+        function pop_Estabelecimentosescolares_9(feature, layer) {
         }
 
-        function style_AtenoPrimriaePreventiva_9_0() {
+        function style_Estabelecimentosescolares_9_0() {
             return {
-                pane: 'pane_AtenoPrimriaePreventiva_9',
+                pane: 'pane_Estabelecimentosescolares_9',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(225,89,137,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Estabelecimentosescolares_9');
+        map.getPane('pane_Estabelecimentosescolares_9').style.zIndex = 409;
+        map.getPane('pane_Estabelecimentosescolares_9').style['mix-blend-mode'] = 'normal';
+        var layer_Estabelecimentosescolares_9 = new L.geoJson(json_Estabelecimentosescolares_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Estabelecimentosescolares_9',
+            layerName: 'layer_Estabelecimentosescolares_9',
+            pane: 'pane_Estabelecimentosescolares_9',
+            onEachFeature: pop_Estabelecimentosescolares_9,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Estabelecimentosescolares_9_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Estabelecimentosescolares_9);
+        map.addLayer(layer_Estabelecimentosescolares_9);
+        function pop_Estabelecimentosreligiosos_10(feature, layer) {
+        }
+
+        function style_Estabelecimentosreligiosos_10_0() {
+            return {
+                pane: 'pane_Estabelecimentosreligiosos_10',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -639,27 +627,165 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_AtenoPrimriaePreventiva_9');
-        map.getPane('pane_AtenoPrimriaePreventiva_9').style.zIndex = 409;
-        map.getPane('pane_AtenoPrimriaePreventiva_9').style['mix-blend-mode'] = 'normal';
-        var layer_AtenoPrimriaePreventiva_9 = new L.geoJson(json_AtenoPrimriaePreventiva_9, {
+        map.createPane('pane_Estabelecimentosreligiosos_10');
+        map.getPane('pane_Estabelecimentosreligiosos_10').style.zIndex = 410;
+        map.getPane('pane_Estabelecimentosreligiosos_10').style['mix-blend-mode'] = 'normal';
+        var layer_Estabelecimentosreligiosos_10 = new L.geoJson(json_Estabelecimentosreligiosos_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_AtenoPrimriaePreventiva_9',
-            layerName: 'layer_AtenoPrimriaePreventiva_9',
-            pane: 'pane_AtenoPrimriaePreventiva_9',
-            onEachFeature: pop_AtenoPrimriaePreventiva_9,
+            dataVar: 'json_Estabelecimentosreligiosos_10',
+            layerName: 'layer_Estabelecimentosreligiosos_10',
+            pane: 'pane_Estabelecimentosreligiosos_10',
+            onEachFeature: pop_Estabelecimentosreligiosos_10,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_AtenoPrimriaePreventiva_9_0(feature));
+                return L.circleMarker(latlng, style_Estabelecimentosreligiosos_10_0(feature));
             },
         });
-        bounds_group.addLayer(layer_AtenoPrimriaePreventiva_9);
-        map.addLayer(layer_AtenoPrimriaePreventiva_9);
-        function pop_AtendimentoEspecializadoedeUrgncia_10(feature, layer) {
+        bounds_group.addLayer(layer_Estabelecimentosreligiosos_10);
+        map.addLayer(layer_Estabelecimentosreligiosos_10);
+        function pop_Pontosdecaptaodegua_11(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ID</th>\
+                        <td class="visible-with-data" id="ID">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">REGIAO</th>\
+                        <td class="visible-with-data" id="REGIAO">' + (feature.properties['REGIAO'] !== null ? autolinker.link(feature.properties['REGIAO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">UF</th>\
+                        <td class="visible-with-data" id="UF">' + (feature.properties['UF'] !== null ? autolinker.link(feature.properties['UF'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">REGIONAL</th>\
+                        <td class="visible-with-data" id="REGIONAL">' + (feature.properties['REGIONAL'] !== null ? autolinker.link(feature.properties['REGIONAL'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">MUNICIPIO</th>\
+                        <td class="visible-with-data" id="MUNICIPIO">' + (feature.properties['MUNICIPIO'] !== null ? autolinker.link(feature.properties['MUNICIPIO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CODIGO</th>\
+                        <td class="visible-with-data" id="CODIGO">' + (feature.properties['CODIGO'] !== null ? autolinker.link(feature.properties['CODIGO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TIPO</th>\
+                        <td class="visible-with-data" id="TIPO">' + (feature.properties['TIPO'] !== null ? autolinker.link(feature.properties['TIPO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">SIGLA</th>\
+                        <td class="visible-with-data" id="SIGLA">' + (feature.properties['SIGLA'] !== null ? autolinker.link(feature.properties['SIGLA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">NOME</th>\
+                        <td class="visible-with-data" id="NOME">' + (feature.properties['NOME'] !== null ? autolinker.link(feature.properties['NOME'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">NOME2</th>\
+                        <td class="visible-with-data" id="NOME2">' + (feature.properties['NOME2'] !== null ? autolinker.link(feature.properties['NOME2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CNPJ</th>\
+                        <td class="visible-with-data" id="CNPJ">' + (feature.properties['CNPJ'] !== null ? autolinker.link(feature.properties['CNPJ'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TIPO2</th>\
+                        <td class="visible-with-data" id="TIPO2">' + (feature.properties['TIPO2'] !== null ? autolinker.link(feature.properties['TIPO2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CODIGO2</th>\
+                        <td class="visible-with-data" id="CODIGO2">' + (feature.properties['CODIGO2'] !== null ? autolinker.link(feature.properties['CODIGO2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">NOME3</th>\
+                        <td class="visible-with-data" id="NOME3">' + (feature.properties['NOME3'] !== null ? autolinker.link(feature.properties['NOME3'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">NOME4</th>\
+                        <td class="visible-with-data" id="NOME4">' + (feature.properties['NOME4'] !== null ? autolinker.link(feature.properties['NOME4'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">ANO</th>\
+                        <td class="visible-with-data" id="ANO">' + (feature.properties['ANO'] !== null ? autolinker.link(feature.properties['ANO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TIPO3</th>\
+                        <td class="visible-with-data" id="TIPO3">' + (feature.properties['TIPO3'] !== null ? autolinker.link(feature.properties['TIPO3'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CATEGORIA</th>\
+                        <td class="visible-with-data" id="CATEGORIA">' + (feature.properties['CATEGORIA'] !== null ? autolinker.link(feature.properties['CATEGORIA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">NOME5</th>\
+                        <td class="visible-with-data" id="NOME5">' + (feature.properties['NOME5'] !== null ? autolinker.link(feature.properties['NOME5'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CATEGORIA2</th>\
+                        <td class="visible-with-data" id="CATEGORIA2">' + (feature.properties['CATEGORIA2'] !== null ? autolinker.link(feature.properties['CATEGORIA2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">NOME6</th>\
+                        <td class="visible-with-data" id="NOME6">' + (feature.properties['NOME6'] !== null ? autolinker.link(feature.properties['NOME6'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">OUTORGA</th>\
+                        <td class="visible-with-data" id="OUTORGA">' + (feature.properties['OUTORGA'] !== null ? autolinker.link(feature.properties['OUTORGA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">VAZAO</th>\
+                        <td class="visible-with-data" id="VAZAO">' + (feature.properties['VAZAO'] !== null ? autolinker.link(feature.properties['VAZAO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_Pontosdecaptaodegua_11_0() {
+            return {
+                pane: 'pane_Pontosdecaptaodegua_11',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(252,137,225,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Pontosdecaptaodegua_11');
+        map.getPane('pane_Pontosdecaptaodegua_11').style.zIndex = 411;
+        map.getPane('pane_Pontosdecaptaodegua_11').style['mix-blend-mode'] = 'normal';
+        var layer_Pontosdecaptaodegua_11 = new L.geoJson(json_Pontosdecaptaodegua_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Pontosdecaptaodegua_11',
+            layerName: 'layer_Pontosdecaptaodegua_11',
+            pane: 'pane_Pontosdecaptaodegua_11',
+            onEachFeature: pop_Pontosdecaptaodegua_11,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Pontosdecaptaodegua_11_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Pontosdecaptaodegua_11);
+        map.addLayer(layer_Pontosdecaptaodegua_11);
+        function pop_DiagnsticoTerapiaeApoioTcnico_12(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">CNES</th>\
@@ -705,9 +831,173 @@
             popup.setContent(updatedContent);
         }
 
-        function style_AtendimentoEspecializadoedeUrgncia_10_0() {
+        function style_DiagnsticoTerapiaeApoioTcnico_12_0() {
             return {
-                pane: 'pane_AtendimentoEspecializadoedeUrgncia_10',
+                pane: 'pane_DiagnsticoTerapiaeApoioTcnico_12',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,139,143,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_DiagnsticoTerapiaeApoioTcnico_12');
+        map.getPane('pane_DiagnsticoTerapiaeApoioTcnico_12').style.zIndex = 412;
+        map.getPane('pane_DiagnsticoTerapiaeApoioTcnico_12').style['mix-blend-mode'] = 'normal';
+        var layer_DiagnsticoTerapiaeApoioTcnico_12 = new L.geoJson(json_DiagnsticoTerapiaeApoioTcnico_12, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_DiagnsticoTerapiaeApoioTcnico_12',
+            layerName: 'layer_DiagnsticoTerapiaeApoioTcnico_12',
+            pane: 'pane_DiagnsticoTerapiaeApoioTcnico_12',
+            onEachFeature: pop_DiagnsticoTerapiaeApoioTcnico_12,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_DiagnsticoTerapiaeApoioTcnico_12_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_DiagnsticoTerapiaeApoioTcnico_12);
+        map.addLayer(layer_DiagnsticoTerapiaeApoioTcnico_12);
+        function pop_AtenoPrimriaePreventiva_13(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">CNES</th>\
+                        <td class="visible-with-data" id="cnes">' + (feature.properties['cnes'] !== null ? autolinker.link(feature.properties['cnes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Tipo unidade</th>\
+                        <td class="visible-with-data" id="tp_unid">' + (feature.properties['tp_unid'] !== null ? autolinker.link(feature.properties['tp_unid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Atendimento ambulatorial SUS</th>\
+                        <td class="visible-with-data" id="amb_sus">' + (feature.properties['amb_sus'] !== null ? autolinker.link(feature.properties['amb_sus'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nome</th>\
+                        <td class="visible-with-data" id="nome">' + (feature.properties['nome'] !== null ? autolinker.link(feature.properties['nome'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Endereço</th>\
+                        <td class="visible-with-data" id="end_log">' + (feature.properties['end_log'] !== null ? autolinker.link(feature.properties['end_log'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Número</th>\
+                        <td class="visible-with-data" id="end_num">' + (feature.properties['end_num'] !== null ? autolinker.link(feature.properties['end_num'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Bairro</th>\
+                        <td class="visible-with-data" id="end_bairro">' + (feature.properties['end_bairro'] !== null ? autolinker.link(feature.properties['end_bairro'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Telefone</th>\
+                        <td class="visible-with-data" id="end_tel">' + (feature.properties['end_tel'] !== null ? autolinker.link(feature.properties['end_tel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">E-mail</th>\
+                        <td class="visible-with-data" id="end_email">' + (feature.properties['end_email'] !== null ? autolinker.link(feature.properties['end_email'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_AtenoPrimriaePreventiva_13_0() {
+            return {
+                pane: 'pane_AtenoPrimriaePreventiva_13',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,178,151,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_AtenoPrimriaePreventiva_13');
+        map.getPane('pane_AtenoPrimriaePreventiva_13').style.zIndex = 413;
+        map.getPane('pane_AtenoPrimriaePreventiva_13').style['mix-blend-mode'] = 'normal';
+        var layer_AtenoPrimriaePreventiva_13 = new L.geoJson(json_AtenoPrimriaePreventiva_13, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_AtenoPrimriaePreventiva_13',
+            layerName: 'layer_AtenoPrimriaePreventiva_13',
+            pane: 'pane_AtenoPrimriaePreventiva_13',
+            onEachFeature: pop_AtenoPrimriaePreventiva_13,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_AtenoPrimriaePreventiva_13_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_AtenoPrimriaePreventiva_13);
+        map.addLayer(layer_AtenoPrimriaePreventiva_13);
+        function pop_AtendimentoEspecializadoedeUrgncia_14(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">CNES</th>\
+                        <td class="visible-with-data" id="cnes">' + (feature.properties['cnes'] !== null ? autolinker.link(feature.properties['cnes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Tipo unidade</th>\
+                        <td class="visible-with-data" id="tp_unid">' + (feature.properties['tp_unid'] !== null ? autolinker.link(feature.properties['tp_unid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Atendimento ambulatorial SUS</th>\
+                        <td class="visible-with-data" id="amb_sus">' + (feature.properties['amb_sus'] !== null ? autolinker.link(feature.properties['amb_sus'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nome</th>\
+                        <td class="visible-with-data" id="nome">' + (feature.properties['nome'] !== null ? autolinker.link(feature.properties['nome'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Endereço</th>\
+                        <td class="visible-with-data" id="end_log">' + (feature.properties['end_log'] !== null ? autolinker.link(feature.properties['end_log'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Número</th>\
+                        <td class="visible-with-data" id="end_num">' + (feature.properties['end_num'] !== null ? autolinker.link(feature.properties['end_num'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Bairro</th>\
+                        <td class="visible-with-data" id="end_bairro">' + (feature.properties['end_bairro'] !== null ? autolinker.link(feature.properties['end_bairro'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Telefone</th>\
+                        <td class="visible-with-data" id="end_tel">' + (feature.properties['end_tel'] !== null ? autolinker.link(feature.properties['end_tel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">E-mail</th>\
+                        <td class="visible-with-data" id="end_email">' + (feature.properties['end_email'] !== null ? autolinker.link(feature.properties['end_email'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_AtendimentoEspecializadoedeUrgncia_14_0() {
+            return {
+                pane: 'pane_AtendimentoEspecializadoedeUrgncia_14',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -721,108 +1011,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_AtendimentoEspecializadoedeUrgncia_10');
-        map.getPane('pane_AtendimentoEspecializadoedeUrgncia_10').style.zIndex = 410;
-        map.getPane('pane_AtendimentoEspecializadoedeUrgncia_10').style['mix-blend-mode'] = 'normal';
-        var layer_AtendimentoEspecializadoedeUrgncia_10 = new L.geoJson(json_AtendimentoEspecializadoedeUrgncia_10, {
+        map.createPane('pane_AtendimentoEspecializadoedeUrgncia_14');
+        map.getPane('pane_AtendimentoEspecializadoedeUrgncia_14').style.zIndex = 414;
+        map.getPane('pane_AtendimentoEspecializadoedeUrgncia_14').style['mix-blend-mode'] = 'normal';
+        var layer_AtendimentoEspecializadoedeUrgncia_14 = new L.geoJson(json_AtendimentoEspecializadoedeUrgncia_14, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_AtendimentoEspecializadoedeUrgncia_10',
-            layerName: 'layer_AtendimentoEspecializadoedeUrgncia_10',
-            pane: 'pane_AtendimentoEspecializadoedeUrgncia_10',
-            onEachFeature: pop_AtendimentoEspecializadoedeUrgncia_10,
+            dataVar: 'json_AtendimentoEspecializadoedeUrgncia_14',
+            layerName: 'layer_AtendimentoEspecializadoedeUrgncia_14',
+            pane: 'pane_AtendimentoEspecializadoedeUrgncia_14',
+            onEachFeature: pop_AtendimentoEspecializadoedeUrgncia_14,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_AtendimentoEspecializadoedeUrgncia_10_0(feature));
+                return L.circleMarker(latlng, style_AtendimentoEspecializadoedeUrgncia_14_0(feature));
             },
         });
-        bounds_group.addLayer(layer_AtendimentoEspecializadoedeUrgncia_10);
-        map.addLayer(layer_AtendimentoEspecializadoedeUrgncia_10);
-        function pop_AtenoSadeemRegimesEspeciaiseComunitria_11(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">CNES</th>\
-                        <td class="visible-with-data" id="cnes">' + (feature.properties['cnes'] !== null ? autolinker.link(feature.properties['cnes'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Tipo unidade</th>\
-                        <td class="visible-with-data" id="tp_unid">' + (feature.properties['tp_unid'] !== null ? autolinker.link(feature.properties['tp_unid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td class="visible-with-data" id="amb_sus"colspan="2"><strong>Atendimento ambulatorial SUS</strong><br />' + (feature.properties['amb_sus'] !== null ? autolinker.link(feature.properties['amb_sus'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Nome</th>\
-                        <td class="visible-with-data" id="nome">' + (feature.properties['nome'] !== null ? autolinker.link(feature.properties['nome'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Endereço</th>\
-                        <td class="visible-with-data" id="end_log">' + (feature.properties['end_log'] !== null ? autolinker.link(feature.properties['end_log'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Número</th>\
-                        <td class="visible-with-data" id="end_num">' + (feature.properties['end_num'] !== null ? autolinker.link(feature.properties['end_num'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Bairro</th>\
-                        <td class="visible-with-data" id="end_bairro">' + (feature.properties['end_bairro'] !== null ? autolinker.link(feature.properties['end_bairro'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Telefone</th>\
-                        <td class="visible-with-data" id="end_tel">' + (feature.properties['end_tel'] !== null ? autolinker.link(feature.properties['end_tel'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">E-mail</th>\
-                        <td class="visible-with-data" id="end_email">' + (feature.properties['end_email'] !== null ? autolinker.link(feature.properties['end_email'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-            var popup = layer.getPopup();
-            var content = popup.getContent();
-            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
-            popup.setContent(updatedContent);
-        }
-
-        function style_AtenoSadeemRegimesEspeciaiseComunitria_11_0() {
-            return {
-                pane: 'pane_AtenoSadeemRegimesEspeciaiseComunitria_11',
-                radius: 4.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(190,207,80,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_11');
-        map.getPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_11').style.zIndex = 411;
-        map.getPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_11').style['mix-blend-mode'] = 'normal';
-        var layer_AtenoSadeemRegimesEspeciaiseComunitria_11 = new L.geoJson(json_AtenoSadeemRegimesEspeciaiseComunitria_11, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_AtenoSadeemRegimesEspeciaiseComunitria_11',
-            layerName: 'layer_AtenoSadeemRegimesEspeciaiseComunitria_11',
-            pane: 'pane_AtenoSadeemRegimesEspeciaiseComunitria_11',
-            onEachFeature: pop_AtenoSadeemRegimesEspeciaiseComunitria_11,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_AtenoSadeemRegimesEspeciaiseComunitria_11_0(feature));
-            },
-        });
-        bounds_group.addLayer(layer_AtenoSadeemRegimesEspeciaiseComunitria_11);
-        map.addLayer(layer_AtenoSadeemRegimesEspeciaiseComunitria_11);
-        function pop_RegulaoGestoeInfraestruturadeSade_12(feature, layer) {
+        bounds_group.addLayer(layer_AtendimentoEspecializadoedeUrgncia_14);
+        map.addLayer(layer_AtendimentoEspecializadoedeUrgncia_14);
+        function pop_AtenoSadeemRegimesEspeciaiseComunitria_15(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">CNES</th>\
@@ -868,9 +1077,91 @@
             popup.setContent(updatedContent);
         }
 
-        function style_RegulaoGestoeInfraestruturadeSade_12_0() {
+        function style_AtenoSadeemRegimesEspeciaiseComunitria_15_0() {
             return {
-                pane: 'pane_RegulaoGestoeInfraestruturadeSade_12',
+                pane: 'pane_AtenoSadeemRegimesEspeciaiseComunitria_15',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,207,80,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_15');
+        map.getPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_15').style.zIndex = 415;
+        map.getPane('pane_AtenoSadeemRegimesEspeciaiseComunitria_15').style['mix-blend-mode'] = 'normal';
+        var layer_AtenoSadeemRegimesEspeciaiseComunitria_15 = new L.geoJson(json_AtenoSadeemRegimesEspeciaiseComunitria_15, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_AtenoSadeemRegimesEspeciaiseComunitria_15',
+            layerName: 'layer_AtenoSadeemRegimesEspeciaiseComunitria_15',
+            pane: 'pane_AtenoSadeemRegimesEspeciaiseComunitria_15',
+            onEachFeature: pop_AtenoSadeemRegimesEspeciaiseComunitria_15,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_AtenoSadeemRegimesEspeciaiseComunitria_15_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_AtenoSadeemRegimesEspeciaiseComunitria_15);
+        map.addLayer(layer_AtenoSadeemRegimesEspeciaiseComunitria_15);
+        function pop_RegulaoGestoeInfraestruturadeSade_16(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">CNES</th>\
+                        <td class="visible-with-data" id="cnes">' + (feature.properties['cnes'] !== null ? autolinker.link(feature.properties['cnes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Tipo unidade</th>\
+                        <td class="visible-with-data" id="tp_unid">' + (feature.properties['tp_unid'] !== null ? autolinker.link(feature.properties['tp_unid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Atendimento ambulatorial SUS</th>\
+                        <td class="visible-with-data" id="amb_sus">' + (feature.properties['amb_sus'] !== null ? autolinker.link(feature.properties['amb_sus'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nome</th>\
+                        <td class="visible-with-data" id="nome">' + (feature.properties['nome'] !== null ? autolinker.link(feature.properties['nome'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Endereço</th>\
+                        <td class="visible-with-data" id="end_log">' + (feature.properties['end_log'] !== null ? autolinker.link(feature.properties['end_log'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Número</th>\
+                        <td class="visible-with-data" id="end_num">' + (feature.properties['end_num'] !== null ? autolinker.link(feature.properties['end_num'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Bairro</th>\
+                        <td class="visible-with-data" id="end_bairro">' + (feature.properties['end_bairro'] !== null ? autolinker.link(feature.properties['end_bairro'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Telefone</th>\
+                        <td class="visible-with-data" id="end_tel">' + (feature.properties['end_tel'] !== null ? autolinker.link(feature.properties['end_tel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">E-mail</th>\
+                        <td class="visible-with-data" id="end_email">' + (feature.properties['end_email'] !== null ? autolinker.link(feature.properties['end_email'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_RegulaoGestoeInfraestruturadeSade_16_0() {
+            return {
+                pane: 'pane_RegulaoGestoeInfraestruturadeSade_16',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -884,26 +1175,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_RegulaoGestoeInfraestruturadeSade_12');
-        map.getPane('pane_RegulaoGestoeInfraestruturadeSade_12').style.zIndex = 412;
-        map.getPane('pane_RegulaoGestoeInfraestruturadeSade_12').style['mix-blend-mode'] = 'normal';
-        var layer_RegulaoGestoeInfraestruturadeSade_12 = new L.geoJson(json_RegulaoGestoeInfraestruturadeSade_12, {
+        map.createPane('pane_RegulaoGestoeInfraestruturadeSade_16');
+        map.getPane('pane_RegulaoGestoeInfraestruturadeSade_16').style.zIndex = 416;
+        map.getPane('pane_RegulaoGestoeInfraestruturadeSade_16').style['mix-blend-mode'] = 'normal';
+        var layer_RegulaoGestoeInfraestruturadeSade_16 = new L.geoJson(json_RegulaoGestoeInfraestruturadeSade_16, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_RegulaoGestoeInfraestruturadeSade_12',
-            layerName: 'layer_RegulaoGestoeInfraestruturadeSade_12',
-            pane: 'pane_RegulaoGestoeInfraestruturadeSade_12',
-            onEachFeature: pop_RegulaoGestoeInfraestruturadeSade_12,
+            dataVar: 'json_RegulaoGestoeInfraestruturadeSade_16',
+            layerName: 'layer_RegulaoGestoeInfraestruturadeSade_16',
+            pane: 'pane_RegulaoGestoeInfraestruturadeSade_16',
+            onEachFeature: pop_RegulaoGestoeInfraestruturadeSade_16,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_RegulaoGestoeInfraestruturadeSade_12_0(feature));
+                return L.circleMarker(latlng, style_RegulaoGestoeInfraestruturadeSade_16_0(feature));
             },
         });
-        bounds_group.addLayer(layer_RegulaoGestoeInfraestruturadeSade_12);
-        map.addLayer(layer_RegulaoGestoeInfraestruturadeSade_12);
+        bounds_group.addLayer(layer_RegulaoGestoeInfraestruturadeSade_16);
+        map.addLayer(layer_RegulaoGestoeInfraestruturadeSade_16);
             var abstract = new L.Control({'position':'bottomleft'});
             abstract.onAdd = function (map) {
                 this._div = L.DomUtil.create('div',
@@ -916,7 +1207,7 @@
                 abstract.show = function () {
                     this._div.classList.remove("abstract");
                     this._div.classList.add("abstractUncollapsed");
-                    this._div.innerHTML = 'Observatório de Clima e Saúde<br />ICICT,  Fiocruz<br />v20240514_001';
+                    this._div.innerHTML = 'Observatório de Clima e Saúde<br />ICICT,  Fiocruz<br />v20240514_002';
             };
             abstract.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
@@ -932,13 +1223,18 @@
         var baseMaps = {};
         var overlaysTree = [
         {label: '<b>Estabelecimentos de saúde</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/RegulaoGestoeInfraestruturadeSade_12.png" /> Regulação, Gestão e Infraestrutura de Saúde', layer: layer_RegulaoGestoeInfraestruturadeSade_12},
-            {label: '<img src="legend/AtenoSadeemRegimesEspeciaiseComunitria_11.png" /> Atenção à Saúde em Regimes Especiais e Comunitária', layer: layer_AtenoSadeemRegimesEspeciaiseComunitria_11},
-            {label: '<img src="legend/AtendimentoEspecializadoedeUrgncia_10.png" /> Atendimento Especializado e de Urgência', layer: layer_AtendimentoEspecializadoedeUrgncia_10},
-            {label: '<img src="legend/AtenoPrimriaePreventiva_9.png" /> Atenção Primária e Preventiva', layer: layer_AtenoPrimriaePreventiva_9},
-            {label: '<img src="legend/DiagnsticoTerapiaeApoioTcnico_8.png" /> Diagnóstico, Terapia e Apoio Técnico', layer: layer_DiagnsticoTerapiaeApoioTcnico_8},]},
+            {label: '<img src="legend/RegulaoGestoeInfraestruturadeSade_16.png" /> Regulação, Gestão e Infraestrutura de Saúde', layer: layer_RegulaoGestoeInfraestruturadeSade_16},
+            {label: '<img src="legend/AtenoSadeemRegimesEspeciaiseComunitria_15.png" /> Atenção à Saúde em Regimes Especiais e Comunitária', layer: layer_AtenoSadeemRegimesEspeciaiseComunitria_15},
+            {label: '<img src="legend/AtendimentoEspecializadoedeUrgncia_14.png" /> Atendimento Especializado e de Urgência', layer: layer_AtendimentoEspecializadoedeUrgncia_14},
+            {label: '<img src="legend/AtenoPrimriaePreventiva_13.png" /> Atenção Primária e Preventiva', layer: layer_AtenoPrimriaePreventiva_13},
+            {label: '<img src="legend/DiagnsticoTerapiaeApoioTcnico_12.png" /> Diagnóstico, Terapia e Apoio Técnico', layer: layer_DiagnsticoTerapiaeApoioTcnico_12},]},
+        {label: '<b>Pontos de interesse</b>', selectAllCheckbox: true, children: [
+            {label: '<img src="legend/Pontosdecaptaodegua_11.png" /> Pontos de captação de água', layer: layer_Pontosdecaptaodegua_11},
+            {label: '<img src="legend/Estabelecimentosreligiosos_10.png" /> Estabelecimentos religiosos', layer: layer_Estabelecimentosreligiosos_10},
+            {label: '<img src="legend/Estabelecimentosescolares_9.png" /> Estabelecimentos escolares', layer: layer_Estabelecimentosescolares_9},
+            {label: '<img src="legend/Estabelecimentosagropecurios_8.png" /> Estabelecimentos agropecuários', layer: layer_Estabelecimentosagropecurios_8},
             {label: '<img src="legend/Aldeiasindgenas_7.png" /> Aldeias indígenas', layer: layer_Aldeiasindgenas_7},
-            {label: 'Estradas interrupções<br /><table><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_BloqueioTotal0.png" /></td><td>Bloqueio Total</td></tr><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_BloqueioParcial1.png" /></td><td>Bloqueio Parcial</td></tr><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_Liberado2.png" /></td><td>Liberado</td></tr></table>', layer: layer_Estradasinterrupes_6},
+            {label: 'Estradas interrupções<br /><table><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_BloqueioTotal0.png" /></td><td>Bloqueio Total</td></tr><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_BloqueioParcial1.png" /></td><td>Bloqueio Parcial</td></tr><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_Liberado2.png" /></td><td>Liberado</td></tr></table>', layer: layer_Estradasinterrupes_6},]},
             {label: '<img src="legend/Favelas_5.png" /> Favelas', layer: layer_Favelas_5},
             {label: '<img src="legend/Territrioquilombola_4.png" /> Território quilombola', layer: layer_Territrioquilombola_4},
             {label: '<img src="legend/UFRS_3.png" /> UF RS', layer: layer_UFRS_3},
@@ -971,6 +1267,6 @@
           gtag('js', new Date());
 
           gtag('config', 'G-2M7VLSRDCB');
-        </script>        
+        </script>
     </body>
 </html>

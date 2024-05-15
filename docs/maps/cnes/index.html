@@ -41,14 +41,14 @@
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="data/UFRS_3.js"></script>
-        <script src="data/Territrioquilombola_4.js"></script>
-        <script src="data/Favelas_5.js"></script>
+        <script src="data/TerritrioquilombolaINCRA_4.js"></script>
+        <script src="data/FavelasIBGE_5.js"></script>
         <script src="data/Estradasinterrupes_6.js"></script>
-        <script src="data/Aldeiasindgenas_7.js"></script>
-        <script src="data/Estabelecimentosagropecurios_8.js"></script>
-        <script src="data/Estabelecimentosescolares_9.js"></script>
-        <script src="data/Estabelecimentosreligiosos_10.js"></script>
-        <script src="data/Pontosdecaptaodegua_11.js"></script>
+        <script src="data/AldeiasindgenasFUNAI_7.js"></script>
+        <script src="data/EstabelecimentosagropecuriosCNEFEIBGE_8.js"></script>
+        <script src="data/EstabelecimentosescolaresCNEFEIBGE_9.js"></script>
+        <script src="data/EstabelecimentosreligiososCNEFEIBGE_10.js"></script>
+        <script src="data/PontosdecaptaodeguaSISGUACGVAMMS_11.js"></script>
         <script src="data/DiagnsticoTerapiaeApoioTcnico_12.js"></script>
         <script src="data/AtenoPrimriaePreventiva_13.js"></script>
         <script src="data/AtendimentoEspecializadoedeUrgncia_14.js"></script>
@@ -57,7 +57,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-33.915016944449974,-57.96754827961566],[-26.915650439549907,-49.372668107384236]]);
+        }).fitBounds([[-33.915016944449974,-57.96754827961566],[-26.915650439549903,-49.372668107384236]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -162,7 +162,7 @@
         });
         bounds_group.addLayer(layer_UFRS_3);
         map.addLayer(layer_UFRS_3);
-        function pop_Territrioquilombola_4(feature, layer) {
+        function pop_TerritrioquilombolaINCRA_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Comunidade</th>\
@@ -176,9 +176,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_Territrioquilombola_4_0() {
+        function style_TerritrioquilombolaINCRA_4_0() {
             return {
-                pane: 'pane_Territrioquilombola_4',
+                pane: 'pane_TerritrioquilombolaINCRA_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.5019607843137255)',
                 dashArray: '',
@@ -191,21 +191,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Territrioquilombola_4');
-        map.getPane('pane_Territrioquilombola_4').style.zIndex = 404;
-        map.getPane('pane_Territrioquilombola_4').style['mix-blend-mode'] = 'normal';
-        var layer_Territrioquilombola_4 = new L.geoJson(json_Territrioquilombola_4, {
+        map.createPane('pane_TerritrioquilombolaINCRA_4');
+        map.getPane('pane_TerritrioquilombolaINCRA_4').style.zIndex = 404;
+        map.getPane('pane_TerritrioquilombolaINCRA_4').style['mix-blend-mode'] = 'normal';
+        var layer_TerritrioquilombolaINCRA_4 = new L.geoJson(json_TerritrioquilombolaINCRA_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Territrioquilombola_4',
-            layerName: 'layer_Territrioquilombola_4',
-            pane: 'pane_Territrioquilombola_4',
-            onEachFeature: pop_Territrioquilombola_4,
-            style: style_Territrioquilombola_4_0,
+            dataVar: 'json_TerritrioquilombolaINCRA_4',
+            layerName: 'layer_TerritrioquilombolaINCRA_4',
+            pane: 'pane_TerritrioquilombolaINCRA_4',
+            onEachFeature: pop_TerritrioquilombolaINCRA_4,
+            style: style_TerritrioquilombolaINCRA_4_0,
         });
-        bounds_group.addLayer(layer_Territrioquilombola_4);
-        map.addLayer(layer_Territrioquilombola_4);
-        function pop_Favelas_5(feature, layer) {
+        bounds_group.addLayer(layer_TerritrioquilombolaINCRA_4);
+        map.addLayer(layer_TerritrioquilombolaINCRA_4);
+        function pop_FavelasIBGE_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Nome</th>\
@@ -227,9 +227,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_Favelas_5_0() {
+        function style_FavelasIBGE_5_0() {
             return {
-                pane: 'pane_Favelas_5',
+                pane: 'pane_FavelasIBGE_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.5019607843137255)',
                 dashArray: '',
@@ -242,20 +242,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Favelas_5');
-        map.getPane('pane_Favelas_5').style.zIndex = 405;
-        map.getPane('pane_Favelas_5').style['mix-blend-mode'] = 'normal';
-        var layer_Favelas_5 = new L.geoJson(json_Favelas_5, {
+        map.createPane('pane_FavelasIBGE_5');
+        map.getPane('pane_FavelasIBGE_5').style.zIndex = 405;
+        map.getPane('pane_FavelasIBGE_5').style['mix-blend-mode'] = 'normal';
+        var layer_FavelasIBGE_5 = new L.geoJson(json_FavelasIBGE_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Favelas_5',
-            layerName: 'layer_Favelas_5',
-            pane: 'pane_Favelas_5',
-            onEachFeature: pop_Favelas_5,
-            style: style_Favelas_5_0,
+            dataVar: 'json_FavelasIBGE_5',
+            layerName: 'layer_FavelasIBGE_5',
+            pane: 'pane_FavelasIBGE_5',
+            onEachFeature: pop_FavelasIBGE_5,
+            style: style_FavelasIBGE_5_0,
         });
-        bounds_group.addLayer(layer_Favelas_5);
-        map.addLayer(layer_Favelas_5);
+        bounds_group.addLayer(layer_FavelasIBGE_5);
+        map.addLayer(layer_FavelasIBGE_5);
         function pop_Estradasinterrupes_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -381,7 +381,7 @@
         });
         bounds_group.addLayer(layer_Estradasinterrupes_6);
         map.addLayer(layer_Estradasinterrupes_6);
-        function pop_Aldeiasindgenas_7(feature, layer) {
+        function pop_AldeiasindgenasFUNAI_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">DSEI</th>\
@@ -463,9 +463,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_Aldeiasindgenas_7_0() {
+        function style_AldeiasindgenasFUNAI_7_0() {
             return {
-                pane: 'pane_Aldeiasindgenas_7',
+                pane: 'pane_AldeiasindgenasFUNAI_7',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(61,128,53,1.0)',
@@ -479,27 +479,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Aldeiasindgenas_7');
-        map.getPane('pane_Aldeiasindgenas_7').style.zIndex = 407;
-        map.getPane('pane_Aldeiasindgenas_7').style['mix-blend-mode'] = 'normal';
-        var layer_Aldeiasindgenas_7 = new L.geoJson(json_Aldeiasindgenas_7, {
+        map.createPane('pane_AldeiasindgenasFUNAI_7');
+        map.getPane('pane_AldeiasindgenasFUNAI_7').style.zIndex = 407;
+        map.getPane('pane_AldeiasindgenasFUNAI_7').style['mix-blend-mode'] = 'normal';
+        var layer_AldeiasindgenasFUNAI_7 = new L.geoJson(json_AldeiasindgenasFUNAI_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Aldeiasindgenas_7',
-            layerName: 'layer_Aldeiasindgenas_7',
-            pane: 'pane_Aldeiasindgenas_7',
-            onEachFeature: pop_Aldeiasindgenas_7,
+            dataVar: 'json_AldeiasindgenasFUNAI_7',
+            layerName: 'layer_AldeiasindgenasFUNAI_7',
+            pane: 'pane_AldeiasindgenasFUNAI_7',
+            onEachFeature: pop_AldeiasindgenasFUNAI_7,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Aldeiasindgenas_7_0(feature));
+                return L.shapeMarker(latlng, style_AldeiasindgenasFUNAI_7_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Aldeiasindgenas_7);
-        map.addLayer(layer_Aldeiasindgenas_7);
-        function pop_Estabelecimentosagropecurios_8(feature, layer) {
+        bounds_group.addLayer(layer_AldeiasindgenasFUNAI_7);
+        map.addLayer(layer_AldeiasindgenasFUNAI_7);
+        function pop_EstabelecimentosagropecuriosCNEFEIBGE_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">"COD_UF"</th>\
@@ -533,9 +533,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_Estabelecimentosagropecurios_8_0() {
+        function style_EstabelecimentosagropecuriosCNEFEIBGE_8_0() {
             return {
-                pane: 'pane_Estabelecimentosagropecurios_8',
+                pane: 'pane_EstabelecimentosagropecuriosCNEFEIBGE_8',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -549,32 +549,32 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Estabelecimentosagropecurios_8');
-        map.getPane('pane_Estabelecimentosagropecurios_8').style.zIndex = 408;
-        map.getPane('pane_Estabelecimentosagropecurios_8').style['mix-blend-mode'] = 'normal';
-        var layer_Estabelecimentosagropecurios_8 = new L.geoJson(json_Estabelecimentosagropecurios_8, {
+        map.createPane('pane_EstabelecimentosagropecuriosCNEFEIBGE_8');
+        map.getPane('pane_EstabelecimentosagropecuriosCNEFEIBGE_8').style.zIndex = 408;
+        map.getPane('pane_EstabelecimentosagropecuriosCNEFEIBGE_8').style['mix-blend-mode'] = 'normal';
+        var layer_EstabelecimentosagropecuriosCNEFEIBGE_8 = new L.geoJson(json_EstabelecimentosagropecuriosCNEFEIBGE_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Estabelecimentosagropecurios_8',
-            layerName: 'layer_Estabelecimentosagropecurios_8',
-            pane: 'pane_Estabelecimentosagropecurios_8',
-            onEachFeature: pop_Estabelecimentosagropecurios_8,
+            dataVar: 'json_EstabelecimentosagropecuriosCNEFEIBGE_8',
+            layerName: 'layer_EstabelecimentosagropecuriosCNEFEIBGE_8',
+            pane: 'pane_EstabelecimentosagropecuriosCNEFEIBGE_8',
+            onEachFeature: pop_EstabelecimentosagropecuriosCNEFEIBGE_8,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Estabelecimentosagropecurios_8_0(feature));
+                return L.circleMarker(latlng, style_EstabelecimentosagropecuriosCNEFEIBGE_8_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Estabelecimentosagropecurios_8);
-        map.addLayer(layer_Estabelecimentosagropecurios_8);
-        function pop_Estabelecimentosescolares_9(feature, layer) {
+        bounds_group.addLayer(layer_EstabelecimentosagropecuriosCNEFEIBGE_8);
+        map.addLayer(layer_EstabelecimentosagropecuriosCNEFEIBGE_8);
+        function pop_EstabelecimentosescolaresCNEFEIBGE_9(feature, layer) {
         }
 
-        function style_Estabelecimentosescolares_9_0() {
+        function style_EstabelecimentosescolaresCNEFEIBGE_9_0() {
             return {
-                pane: 'pane_Estabelecimentosescolares_9',
+                pane: 'pane_EstabelecimentosescolaresCNEFEIBGE_9',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -588,32 +588,32 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Estabelecimentosescolares_9');
-        map.getPane('pane_Estabelecimentosescolares_9').style.zIndex = 409;
-        map.getPane('pane_Estabelecimentosescolares_9').style['mix-blend-mode'] = 'normal';
-        var layer_Estabelecimentosescolares_9 = new L.geoJson(json_Estabelecimentosescolares_9, {
+        map.createPane('pane_EstabelecimentosescolaresCNEFEIBGE_9');
+        map.getPane('pane_EstabelecimentosescolaresCNEFEIBGE_9').style.zIndex = 409;
+        map.getPane('pane_EstabelecimentosescolaresCNEFEIBGE_9').style['mix-blend-mode'] = 'normal';
+        var layer_EstabelecimentosescolaresCNEFEIBGE_9 = new L.geoJson(json_EstabelecimentosescolaresCNEFEIBGE_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Estabelecimentosescolares_9',
-            layerName: 'layer_Estabelecimentosescolares_9',
-            pane: 'pane_Estabelecimentosescolares_9',
-            onEachFeature: pop_Estabelecimentosescolares_9,
+            dataVar: 'json_EstabelecimentosescolaresCNEFEIBGE_9',
+            layerName: 'layer_EstabelecimentosescolaresCNEFEIBGE_9',
+            pane: 'pane_EstabelecimentosescolaresCNEFEIBGE_9',
+            onEachFeature: pop_EstabelecimentosescolaresCNEFEIBGE_9,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Estabelecimentosescolares_9_0(feature));
+                return L.circleMarker(latlng, style_EstabelecimentosescolaresCNEFEIBGE_9_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Estabelecimentosescolares_9);
-        map.addLayer(layer_Estabelecimentosescolares_9);
-        function pop_Estabelecimentosreligiosos_10(feature, layer) {
+        bounds_group.addLayer(layer_EstabelecimentosescolaresCNEFEIBGE_9);
+        map.addLayer(layer_EstabelecimentosescolaresCNEFEIBGE_9);
+        function pop_EstabelecimentosreligiososCNEFEIBGE_10(feature, layer) {
         }
 
-        function style_Estabelecimentosreligiosos_10_0() {
+        function style_EstabelecimentosreligiososCNEFEIBGE_10_0() {
             return {
-                pane: 'pane_Estabelecimentosreligiosos_10',
+                pane: 'pane_EstabelecimentosreligiososCNEFEIBGE_10',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -627,31 +627,31 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Estabelecimentosreligiosos_10');
-        map.getPane('pane_Estabelecimentosreligiosos_10').style.zIndex = 410;
-        map.getPane('pane_Estabelecimentosreligiosos_10').style['mix-blend-mode'] = 'normal';
-        var layer_Estabelecimentosreligiosos_10 = new L.geoJson(json_Estabelecimentosreligiosos_10, {
+        map.createPane('pane_EstabelecimentosreligiososCNEFEIBGE_10');
+        map.getPane('pane_EstabelecimentosreligiososCNEFEIBGE_10').style.zIndex = 410;
+        map.getPane('pane_EstabelecimentosreligiososCNEFEIBGE_10').style['mix-blend-mode'] = 'normal';
+        var layer_EstabelecimentosreligiososCNEFEIBGE_10 = new L.geoJson(json_EstabelecimentosreligiososCNEFEIBGE_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Estabelecimentosreligiosos_10',
-            layerName: 'layer_Estabelecimentosreligiosos_10',
-            pane: 'pane_Estabelecimentosreligiosos_10',
-            onEachFeature: pop_Estabelecimentosreligiosos_10,
+            dataVar: 'json_EstabelecimentosreligiososCNEFEIBGE_10',
+            layerName: 'layer_EstabelecimentosreligiososCNEFEIBGE_10',
+            pane: 'pane_EstabelecimentosreligiososCNEFEIBGE_10',
+            onEachFeature: pop_EstabelecimentosreligiososCNEFEIBGE_10,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Estabelecimentosreligiosos_10_0(feature));
+                return L.circleMarker(latlng, style_EstabelecimentosreligiososCNEFEIBGE_10_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Estabelecimentosreligiosos_10);
-        map.addLayer(layer_Estabelecimentosreligiosos_10);
-        function pop_Pontosdecaptaodegua_11(feature, layer) {
+        bounds_group.addLayer(layer_EstabelecimentosreligiososCNEFEIBGE_10);
+        map.addLayer(layer_EstabelecimentosreligiososCNEFEIBGE_10);
+        function pop_PontosdecaptaodeguaSISGUACGVAMMS_11(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">ID</th>\
-                        <td class="visible-with-data" id="ID">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CODIGO</th>\
+                        <td class="visible-with-data" id="CODIGO">' + (feature.properties['CODIGO'] !== null ? autolinker.link(feature.properties['CODIGO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">REGIAO</th>\
@@ -670,8 +670,8 @@
                         <td class="visible-with-data" id="MUNICIPIO">' + (feature.properties['MUNICIPIO'] !== null ? autolinker.link(feature.properties['MUNICIPIO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CODIGO</th>\
-                        <td class="visible-with-data" id="CODIGO">' + (feature.properties['CODIGO'] !== null ? autolinker.link(feature.properties['CODIGO'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CODIGO2</th>\
+                        <td class="visible-with-data" id="CODIGO2">' + (feature.properties['CODIGO2'] !== null ? autolinker.link(feature.properties['CODIGO2'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">TIPO</th>\
@@ -698,8 +698,8 @@
                         <td class="visible-with-data" id="TIPO2">' + (feature.properties['TIPO2'] !== null ? autolinker.link(feature.properties['TIPO2'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CODIGO2</th>\
-                        <td class="visible-with-data" id="CODIGO2">' + (feature.properties['CODIGO2'] !== null ? autolinker.link(feature.properties['CODIGO2'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CODIGO3</th>\
+                        <td class="visible-with-data" id="CODIGO3">' + (feature.properties['CODIGO3'] !== null ? autolinker.link(feature.properties['CODIGO3'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">NOME3</th>\
@@ -749,9 +749,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_Pontosdecaptaodegua_11_0() {
+        function style_PontosdecaptaodeguaSISGUACGVAMMS_11_0() {
             return {
-                pane: 'pane_Pontosdecaptaodegua_11',
+                pane: 'pane_PontosdecaptaodeguaSISGUACGVAMMS_11',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -765,26 +765,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Pontosdecaptaodegua_11');
-        map.getPane('pane_Pontosdecaptaodegua_11').style.zIndex = 411;
-        map.getPane('pane_Pontosdecaptaodegua_11').style['mix-blend-mode'] = 'normal';
-        var layer_Pontosdecaptaodegua_11 = new L.geoJson(json_Pontosdecaptaodegua_11, {
+        map.createPane('pane_PontosdecaptaodeguaSISGUACGVAMMS_11');
+        map.getPane('pane_PontosdecaptaodeguaSISGUACGVAMMS_11').style.zIndex = 411;
+        map.getPane('pane_PontosdecaptaodeguaSISGUACGVAMMS_11').style['mix-blend-mode'] = 'normal';
+        var layer_PontosdecaptaodeguaSISGUACGVAMMS_11 = new L.geoJson(json_PontosdecaptaodeguaSISGUACGVAMMS_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Pontosdecaptaodegua_11',
-            layerName: 'layer_Pontosdecaptaodegua_11',
-            pane: 'pane_Pontosdecaptaodegua_11',
-            onEachFeature: pop_Pontosdecaptaodegua_11,
+            dataVar: 'json_PontosdecaptaodeguaSISGUACGVAMMS_11',
+            layerName: 'layer_PontosdecaptaodeguaSISGUACGVAMMS_11',
+            pane: 'pane_PontosdecaptaodeguaSISGUACGVAMMS_11',
+            onEachFeature: pop_PontosdecaptaodeguaSISGUACGVAMMS_11,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Pontosdecaptaodegua_11_0(feature));
+                return L.circleMarker(latlng, style_PontosdecaptaodeguaSISGUACGVAMMS_11_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Pontosdecaptaodegua_11);
-        map.addLayer(layer_Pontosdecaptaodegua_11);
+        bounds_group.addLayer(layer_PontosdecaptaodeguaSISGUACGVAMMS_11);
+        map.addLayer(layer_PontosdecaptaodeguaSISGUACGVAMMS_11);
         function pop_DiagnsticoTerapiaeApoioTcnico_12(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -1207,7 +1207,7 @@
                 abstract.show = function () {
                     this._div.classList.remove("abstract");
                     this._div.classList.add("abstractUncollapsed");
-                    this._div.innerHTML = 'Observatório de Clima e Saúde<br />ICICT,  Fiocruz<br />v20240514_002';
+                    this._div.innerHTML = 'Observatório de Clima e Saúde<br />ICICT,  Fiocruz<br />v20240515_001';
             };
             abstract.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
@@ -1222,23 +1222,23 @@
         .title += 'Search for a place';
         var baseMaps = {};
         var overlaysTree = [
-        {label: '<b>Estabelecimentos de saúde</b>', selectAllCheckbox: true, children: [
+        {label: '<b>Estabelecimentos de saúde (CNES/MS)</b>', selectAllCheckbox: true, children: [
             {label: '<img src="legend/RegulaoGestoeInfraestruturadeSade_16.png" /> Regulação, Gestão e Infraestrutura de Saúde', layer: layer_RegulaoGestoeInfraestruturadeSade_16},
             {label: '<img src="legend/AtenoSadeemRegimesEspeciaiseComunitria_15.png" /> Atenção à Saúde em Regimes Especiais e Comunitária', layer: layer_AtenoSadeemRegimesEspeciaiseComunitria_15},
             {label: '<img src="legend/AtendimentoEspecializadoedeUrgncia_14.png" /> Atendimento Especializado e de Urgência', layer: layer_AtendimentoEspecializadoedeUrgncia_14},
             {label: '<img src="legend/AtenoPrimriaePreventiva_13.png" /> Atenção Primária e Preventiva', layer: layer_AtenoPrimriaePreventiva_13},
             {label: '<img src="legend/DiagnsticoTerapiaeApoioTcnico_12.png" /> Diagnóstico, Terapia e Apoio Técnico', layer: layer_DiagnsticoTerapiaeApoioTcnico_12},]},
         {label: '<b>Pontos de interesse</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/Pontosdecaptaodegua_11.png" /> Pontos de captação de água', layer: layer_Pontosdecaptaodegua_11},
-            {label: '<img src="legend/Estabelecimentosreligiosos_10.png" /> Estabelecimentos religiosos', layer: layer_Estabelecimentosreligiosos_10},
-            {label: '<img src="legend/Estabelecimentosescolares_9.png" /> Estabelecimentos escolares', layer: layer_Estabelecimentosescolares_9},
-            {label: '<img src="legend/Estabelecimentosagropecurios_8.png" /> Estabelecimentos agropecuários', layer: layer_Estabelecimentosagropecurios_8},
-            {label: '<img src="legend/Aldeiasindgenas_7.png" /> Aldeias indígenas', layer: layer_Aldeiasindgenas_7},
+            {label: '<img src="legend/PontosdecaptaodeguaSISGUACGVAMMS_11.png" /> Pontos de captação de água (SISÁGUA/CGVAM/MS)', layer: layer_PontosdecaptaodeguaSISGUACGVAMMS_11},
+            {label: '<img src="legend/EstabelecimentosreligiososCNEFEIBGE_10.png" /> Estabelecimentos religiosos (CNEFE/IBGE)', layer: layer_EstabelecimentosreligiososCNEFEIBGE_10},
+            {label: '<img src="legend/EstabelecimentosescolaresCNEFEIBGE_9.png" /> Estabelecimentos escolares (CNEFE/IBGE)', layer: layer_EstabelecimentosescolaresCNEFEIBGE_9},
+            {label: '<img src="legend/EstabelecimentosagropecuriosCNEFEIBGE_8.png" /> Estabelecimentos agropecuários (CNEFE/IBGE)', layer: layer_EstabelecimentosagropecuriosCNEFEIBGE_8},
+            {label: '<img src="legend/AldeiasindgenasFUNAI_7.png" /> Aldeias indígenas ()FUNAI)', layer: layer_AldeiasindgenasFUNAI_7},
             {label: 'Estradas interrupções<br /><table><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_BloqueioTotal0.png" /></td><td>Bloqueio Total</td></tr><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_BloqueioParcial1.png" /></td><td>Bloqueio Parcial</td></tr><tr><td style="text-align: center;"><img src="legend/Estradasinterrupes_6_Liberado2.png" /></td><td>Liberado</td></tr></table>', layer: layer_Estradasinterrupes_6},]},
-            {label: '<img src="legend/Favelas_5.png" /> Favelas', layer: layer_Favelas_5},
-            {label: '<img src="legend/Territrioquilombola_4.png" /> Território quilombola', layer: layer_Territrioquilombola_4},
+            {label: '<img src="legend/FavelasIBGE_5.png" /> Favelas (IBGE)', layer: layer_FavelasIBGE_5},
+            {label: '<img src="legend/TerritrioquilombolaINCRA_4.png" /> Território quilombola (INCRA)', layer: layer_TerritrioquilombolaINCRA_4},
             {label: '<img src="legend/UFRS_3.png" /> UF RS', layer: layer_UFRS_3},
-        {label: '<b>Mancha área inundada</b>', selectAllCheckbox: true, children: [
+        {label: '<b>Mancha área inundada (Geonetcast/SSEC/WiscUni)</b>', selectAllCheckbox: true, children: [
             {label: "part_b", layer: layer_part_b_2},
             {label: "part_a", layer: layer_part_a_1},]},
             {label: "OpenStreetMaps", layer: layer_OpenStreetMaps_0},]
